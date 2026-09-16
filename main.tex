@@ -27,13 +27,13 @@
 
 \subsection{Longest Cycles}
 \begin{problem}
-    Identify the longest cycles in the network.
+Identify the longest cycles in the network.
 \end{problem}
 The cycle $I \to G \to M \to N \to K \to J \to H \to I$ has 7 nodes and is the only longest cycle.
 
 \subsection{Connectedness}
 \begin{problem}
-    Is the network connected? Explain.
+Is the network connected? Explain.
 \end{problem}
 
 The network is not connected because there are nodes that cannot be reached from other nodes (e.g. $B \to I$).
@@ -41,7 +41,7 @@ The network is not connected because there are nodes that cannot be reached from
 \subsection{Connected Components}
 
 \begin{problem}
-    How many connected components does the network have? Which nodes are in each component?
+How many connected components does the network have? Which nodes are in each component?
 \end{problem}
 
 The network has two connected components:
@@ -53,13 +53,13 @@ The network has two connected components:
 \subsection{Size of Connected Components}
 
 \begin{problem}
-    How many nodes are in the largest component of the network?
+How many nodes are in the largest component of the network?
 \end{problem}
 The largest component is Component 2, which has 8 nodes: $G, M, N, K, L, J, H, I$.
 
 \subsection{Breadth-First Search}
 \begin{problem}
-    Find the distance from node H to every other node in the network using breadth-first search. Draw a diagram of the breadth-first search procedure similar to the one shown in class, where each new layer of nodes is identified and circled. Remember, the BFS diagram should have all of the nodes in it!
+Find the distance from node H to every other node in the network using breadth-first search. Draw a diagram of the breadth-first search procedure similar to the one shown in class, where each new layer of nodes is identified and circled. Remember, the BFS diagram should have all of the nodes in it!
 \end{problem}
 
 The breadth-first search layers starting at $H$ are:
@@ -75,7 +75,7 @@ The breadth-first search layers starting at $H$ are:
 
 \subsection{Add One Edge}
 \begin{problem}
-    What is the longest cycle you can make by adding one edge to the network? Please specify what edge you would add, how long the longest resulting cycle is, and the cycle itself (i.e., the sequence of nodes). You do not have to explain how you found the edge and the cycle.
+What is the longest cycle you can make by adding one edge to the network? Please specify what edge you would add, how long the longest resulting cycle is, and the cycle itself (i.e., the sequence of nodes). You do not have to explain how you found the edge and the cycle.
 \end{problem}
 
 The longest cycle can be made by adding the edge $C \to G$. The resulting longest cycle is $I \to G \to C \to A \to B \to C \to G \to M \to N \to K \to J \to H \to I$, which has 11 nodes.
@@ -83,7 +83,7 @@ The longest cycle can be made by adding the edge $C \to G$. The resulting longes
 \section{Network 2}
 
 \begin{problem}
-    In the network below, the ties (P, X), (P, Y), (Q, X), (Q, Y), (R, V), and (R, Z) are labeled strong (S), while all others are labeled weak (W).
+In the network below, the ties (P, X), (P, Y), (Q, X), (Q, Y), (R, V), and (R, Z) are labeled strong (S), while all others are labeled weak (W).
 \end{problem}
 
 \begin{figure}[h]
@@ -99,8 +99,86 @@ The longest cycle can be made by adding the edge $C \to G$. The resulting longes
     % V to R (S)
 \end{figure}
 
+\subsection{Strong Triadic Closure Property}
 \begin{problem}
-    Identify all nodes that violate the Strong Triadic Closure Property. For each one, name its strong ties and the missing edge.
+Identify all nodes that violate the Strong Triadic Closure Property. For each one, name its strong ties and the missing edge.
 \end{problem}
+
+The nodes that violate the Strong Triadic Closure Property are $P$, $Q$, and $R$.
+
+\begin{itemize}
+    \item $P$ has strong ties to $X$ and $Y$, but $X$ and $Y$ are not adjacent. The missing edge is $XY$.
+    \item $Q$ has strong ties to $X$ and $Y$, but $X$ and $Y$ are not adjacent. The missing edge is $XY$.
+    \item $R$ has strong ties to $V$ and $Z$, but $V$ and $Z$ are not adjacent. The missing edge is $VZ$.
+\end{itemize}
+
+No other node has two strong ties whose endpoints are not connected, so these are the only violations.
+
+\subsection{Fixing the Network}
+\begin{problem}
+A student says that fixing this network requires the same number of new edges as the number of violations. Is the student right? Explain. Find a smallest set of edges such that adding them makes the network satisfy the Strong Triadic Closure Property. Explain why no smaller set of edges can work.
+\end{problem}
+
+The student is wrong because there are 3 violations, but one edge can fix both violations for $P$ and $Q$. The smallest set of edges that fixes all violations is $\{XY, VZ\}$. Adding $XY$ fixes the violations at $P$ and $Q$, and adding $VZ$ fixes the violation at $R$. No smaller set of edges can work because each missing edge corresponds to a distinct violation that cannot be resolved by any other single edge.
+
+\subsection{Local Bridges}
+\begin{problem}
+List all local bridges in the original network together with their spans. Then list all local bridges again after adding the edges from part (b). Explain why the list changed.
+\end{problem}
+
+In the original network, the local bridges are:
+
+\begin{itemize}
+    \item $P$--$Z$, span $4$
+    \item $Z$--$R$, span $4$
+    \item $V$--$R$, span $4$
+\end{itemize}
+
+After adding the edges $XY$ and $VZ$, the only local bridge is:
+
+\begin{itemize}
+    \item $P$--$Z$, span $3$
+\end{itemize}
+
+The list changes because the new edges create triangles and any edge that lies in a triangle cannot be a local bridge, since its endpoints already share a common neighbor.
+
+\subsection{Average Local Clustering Coefficient}
+\begin{problem}
+Compute the average local clustering coefficient of the network before and after adding the edges identified in part (b). Does the direction of the change match what triadic closure predicts? Explain
+\end{problem}
+
+Before adding the edges, the local clustering coefficients are:
+\[
+    C_P = \frac{2}{6} = \frac{1}{3}, \quad
+    C_Q = \frac{2}{3}, \quad
+    C_R = 0, \quad
+    C_X = \frac{1}{3}, \quad
+    C_Y = \frac{1}{3}, \quad
+    C_Z = 0, \quad
+    C_V = 0.
+\]
+Thus,
+\[
+    \overline{C}_{\text{before}} = \frac{1}{7}\left(\frac{1}{3}+\frac{2}{3}+0+\frac{1}{3}+\frac{1}{3}+0+0\right)
+    = \frac{5}{21} \approx 0.238.
+\]
+
+After adding $XY$ and $VZ$, the local clustering coefficients become
+\[
+    C_P = \frac{3}{6} = \frac{1}{2}, \quad
+    C_Q = 1, \quad
+    C_R = 1, \quad
+    C_X = \frac{4}{6} = \frac{2}{3}, \quad
+    C_Y = \frac{4}{6} = \frac{2}{3}, \quad
+    C_Z = \frac{1}{3}, \quad
+    C_V = \frac{2}{6} = \frac{1}{3}.
+\]
+So
+\[
+    \overline{C}_{\text{after}} = \frac{1}{7}\left(\frac{1}{2}+1+1+\frac{2}{3}+\frac{2}{3}+\frac{1}{3}+\frac{1}{3}\right)
+    = \frac{9}{14} \approx 0.643.
+\]
+
+The average local clustering coefficient increases from about $0.238$ to about $0.643$. This matches triadic closure: adding edges that complete open triples creates more closed triplets and therefore raises clustering, so the direction of change is exactly what triadic closure predicts.
 
 \end{document}
