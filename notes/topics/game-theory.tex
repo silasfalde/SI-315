@@ -206,3 +206,16 @@
     \item Weighted bipartite graph: bipartite graph where each edge has an associated weight
     \item Maximum weight bipartite matching (optimal assignment): bipartite matching that maximizes the sum of the weights of the selected edges
 \end{itemize}
+
+\subsection{Finding Market-Clearing Prices}
+
+\begin{itemize}
+    \item Market-clearing prices: prices assigned to edges in a weighted bipartite graph such that each vertex in one partition is matched to a vertex in the other partition with the highest possible weight given the prices, ensuring that the market clears (all supply meets demand); aka, competitive equilibrium prices.
+    \item Iterative procedure to find market-clearing prices:
+          \begin{enumerate}
+              \item Initialize prices for all edges, typically starting with zero.
+              \item Construct preferred-seller graph based on the current prices, where each vertex in one partition points to its most preferred vertex in the other partition.
+              \item Find a matching in the preferred-seller graph.
+              \item If the matching is not perfect, increase the prices of the nodes with multiple preferred edges and repeat the process until a perfect matching is found.
+          \end{enumerate}
+\end{itemize}
