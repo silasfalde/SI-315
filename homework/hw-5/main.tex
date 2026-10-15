@@ -1,4 +1,4 @@
-\documentclass{assignment}
+\documentclass[newpages]{assignment}
 
 \class{SI 315}
 \title{Assignment 5}
@@ -8,6 +8,499 @@
 \maketitle
 \tableofcontents
 
+\section{}
+
+\begin{problem}
+    For each of the following two player games find all Nash equilibria. In each payoff matrix below the rows correspond to player A's strategies and the columns correspond to player B's strategies. The first entry in each box is player A's payoff and the second entry is player B's payoff.
+\end{problem}
+
+\subsection{}
+
+\[
+    \begin{array}{c|cc}
+          & L      & R      \\
+        \hline
+        U & (8, 4) & (5, 5) \\
+        D & (3, 3) & (4, 8)
+    \end{array}
+\]
+
+\begin{solution}
+    For Player A, \(U\) is the best response. Given \(U\),
+    Player B prefers \(R\), since \(5>4\). So the unique Nash
+    equilibrium is \((U,R)\).
+\end{solution}
+
+\subsection{}
+
+\[
+    \begin{array}{c|cc}
+          & L       & R       \\
+        \hline
+        U & (0, 0)  & (-1, 1) \\
+        D & (-1, 1) & (2, -2)
+    \end{array}
+\]
+
+\begin{solution}
+    There is no pure-strategy equilibrium: against \(L\), A prefers \(U\),
+    while against \(R\), A prefers \(D\); B prefers \(R\) against \(U\) and
+    \(L\) against \(D\).
+\end{solution}
+
+\subsection{}
+
+\[
+    \begin{array}{c|cc}
+          & L      & R       \\
+        \hline
+        U & (1, 1) & (3, -2) \\
+        D & (0, 3) & (4, 4)
+    \end{array}
+\]
+
+\begin{solution}
+    The pure-strategy equilibria are \((U,L)\) and \((D,R)\).
+\end{solution}
+
+\subsection{}
+
+\[
+    \begin{array}{c|cc}
+          & L      & R       \\
+        \hline
+        U & (5, 6) & (0, 10) \\
+        D & (4, 4) & (2, 2)
+    \end{array}
+\]
+
+\begin{solution}
+    There is no pure equilibrium. A's best response is \(U\) to \(L\) and
+    \(D\) to \(R\); B's best response is \(R\) to \(U\) and \(L\) to \(D\).
+    So, at each pure outcome, one of the players would switch.
+
+    Let \(p=\prob(A\text{ plays }U)\) and \(q=\prob(B\text{ plays }L)\). A's
+    expected payoffs from \(U\) and \(D\) are \(5q\) and
+    \(4q+2(1-q)=2+2q\). Indifference gives \(q=\frac{2}{3}\).
+    B's expected payoffs from \(L\) and \(R\) are \(6p+4(1-p)=4+2p\)
+    and \(10p+2(1-p)=2+8p\). Indifference gives \(p=\frac{1}{3}\).
+    The unique Nash equilibrium is therefore
+    \[
+        \left(p(U),q(L)\right)=\left(\frac{1}{3},\frac{2}{3}\right).
+    \]
+\end{solution}
+
+\section{}
+
+\begin{problem}
+    Consider the following payoff matrix, where x could represent any number:
+    \[
+        \begin{array}{c|cc}
+              & L      & R      \\
+            \hline
+            U & (x, 3) & (4, 6) \\
+            D & (2, 9) & (3, 8)
+        \end{array}
+    \]
+    Show all your work for all parts. If there are values of x that satisfy the properties, be sure to (i) list all values of x that satisfy the listed properties, (ii) explain why the values of x you specified satisfy the listed properties, and (iii) explain why no other values of x would satisfy the listed properties. If no values of x satisfy the properties, explain why. Note: Please be sure to specify all values of x that satisfy the properties specified in the subparts. In some cases, it may not work for any value of x and you need to explain why. In some cases, this may be a range or multiple ranges of values instead of just one number - and you'll need to provide the entire range to get full credit.
+\end{problem}
+
+\subsection{}
+
+\begin{problem}
+    For what values of \(x\), if any, does the payoff matrix have a pure-strategy
+    Nash equilibrium at \((D, L)\)?
+\end{problem}
+
+\begin{solution}
+    If B chooses \(L\), A gets \(x\) from \(U\) and \(2\) from \(D\).
+    So \(D\) is a best response exactly when \(2\geq x\). If A chooses
+    \(D\), B gets \(9\) from \(L\) and \(8\) from \(R\), so \(L\) is
+    always a strict best response. Both players are therefore best
+    responding at \((D,L)\) only for
+    \[
+        \boxed{x\leq 2}.
+    \]
+\end{solution}
+
+\subsection{}
+
+\begin{problem}
+    For what values of \(x\), if any, does the payoff matrix have a pure-strategy
+    Nash equilibrium at \((U, L)\)?
+\end{problem}
+
+\begin{solution}
+    For A to prefer \(U\) to \(D\) when B chooses \(L\), we would need
+    \(x\geq 2\). But when A chooses \(U\), B's payoff is \(3\) from \(L\)
+    and \(6\) from \(R\), so B only prefers \(R\). So \(L\) is never
+    a best response to \(U\), whatever \(x\) is. There are
+    \(\boxed{\text{no values of }x}\) for which \((U,L)\) is a Nash
+    equilibrium.
+\end{solution}
+
+\subsection{}
+
+\begin{problem}
+    For what values of \(x\), if any, does the payoff matrix have a mixed-strategy
+    Nash equilibrium at \(\left(\frac{1}{4}, \frac{2}{3}\right)\)?
+\end{problem}
+
+\begin{solution}
+    With \(q=\frac{2}{3}\), A's expected payoff from \(U\) is
+    \[
+        \frac{2}{3}x+\frac{1}{3}(4)=\frac{2x+4}{3},
+    \]
+    while A's payoff from \(D\) is
+    \[
+        \frac{2}{3}(2)+\frac{1}{3}(3)=\frac{7}{3}.
+    \]
+    These are equal only when \(2x+4=7\), or \(x=\frac{3}{2}\).
+    B is also indifferent at \(p=\frac{1}{4}\): B's payoffs from \(L\)
+    and \(R\) are respectively
+    \[
+        \frac14(3)+\frac34(9)=\frac{15}{2},
+        \qquad
+        \frac14(6)+\frac34(8)=\frac{15}{2}.
+    \]
+    So the specified profile is a Nash equilibrium only when
+    \(\boxed{x=\frac{3}{2}}\).
+\end{solution}
+
+\subsection{}
+
+\begin{problem}
+    For what values of \(x\), if any, does the payoff matrix have a mixed-strategy
+    Nash equilibrium at \(\left(\frac{1}{3}, \frac{2}{3}\right)\)?
+\end{problem}
+
+\begin{solution}
+    B is not indifferent when \(p=\frac{1}{3}\):
+    \[
+        u_B(L)=\frac13(3)+\frac23(9)=7,\qquad
+        u_B(R)=\frac13(6)+\frac23(8)=\frac{22}{3}.
+    \]
+    Since \(\frac{22}{3}>7\), B prefers \(R\) instead of mixing
+    with probability \(\frac{2}{3}\) on \(L\). This condition does not
+    involve \(x\), so no value of \(x\) can make the proposed profile a
+    Nash equilibrium: \(\boxed{\text{no values of }x}\).
+\end{solution}
+
+\subsection{}
+
+\begin{problem}
+    For what values of \(x\), if any, does the payoff matrix have no mixed-strategy
+    Nash equilibrium?
+\end{problem}
+
+\begin{solution}
+    By definition, there are \(\boxed{\text{no values of }x}\)
+    with no mixed-strategy Nash equilibrium: every game has at least
+    one Nash equilibrium when players may use mixed strategies.
+\end{solution}
+
+\subsection{}
+
+\begin{problem}
+    For what values of \(x\), if any, is player 1's expected payoff 3 when the
+    players play the mixed strategies \((0.7, 0.8)\)?
+\end{problem}
+
+\begin{solution}
+    The four
+    outcomes \((U,L),(U,R),(D,L),(D,R)\) have probabilities
+    \(0.56,0.14,0.24,0.06\). Player 1's expected payoff is
+    \[
+        0.56x+0.14(4)+0.24(2)+0.06(3)
+        =0.56x+1.22.
+    \]
+    Setting this equal to \(3\) gives \(0.56x=1.78 \implies \boxed{x=\frac{89}{28}}\).
+\end{solution}
+
+\section{}
+
+\begin{problem}
+    Two drivers are heading straight toward each other. Simultaneously and independently, each one chooses either to Swerve or to go Straight. If both swerve, nothing happens and both get a payoff of 0. If exactly one swerves, the driver who swerved is called a chicken and gets a payoff of -1, while the driver who went straight is called brave and gets a payoff of 1. If neither swerves, the cars crash and both drivers get a payoff of -k, where k is a number greater than 1.
+\end{problem}
+
+\subsection{}
+
+\begin{problem}
+    Draw the payoff matrix for this game. Payoffs should be in terms of \(k\).
+\end{problem}
+
+\begin{solution}
+    \(S = \) Swerve and \(T = \) Straight.
+    \[
+        \begin{array}{c|cc}
+                               & \text{Driver 2: }S & \text{Driver 2: }T \\
+            \hline
+            \text{Driver 1: }S & (0,0)              & (-1,1)             \\
+            \text{Driver 1: }T & (1,-1)             & (-k,-k)
+        \end{array}
+    \]
+\end{solution}
+
+\subsection{}
+
+\begin{problem}
+    Find all pure-strategy Nash equilibria. Explain why the pure-strategy Nash
+    equilibria you found do not vary as long as \(k > 1\).
+\end{problem}
+
+\begin{solution}
+    If Driver 2 swerves, Driver 1 wants to go straight (\(1>0\)); if
+    Driver 2 goes straight, Driver 1 wants to swerve (\(-1>-k\), since
+    \(k>1\)). The same thing applies to Driver 2. So
+    when one driver swerves and the other goes straight, neither driver
+    wants to switch. The two pure-strategy Nash equilibria are
+    \[
+        (S,T)\quad\text{and}\quad(T,S).
+    \]
+    The comparison that matters in the outcome is \(-1>-k\), which
+    holds for every \(k>1\). So changing \(k\) within the stated
+    range never changes these best responses or the two equilibria.
+\end{solution}
+
+\subsection{}
+
+\begin{problem}
+    Find the mixed-strategy Nash equilibrium. Let \(p\) be the probability that
+    Driver 1 swerves and \(q\) the probability that Driver 2 swerves. Express
+    your answer in terms of \(k\).
+\end{problem}
+
+\begin{solution}
+    In a mixed equilibrium, each driver must make the other indifferent
+    between swerving and going straight. Driver 1's expected payoff from swerving is
+    \[
+        u_1(S)=0q+(-1)(1-q)=q-1,
+    \]
+    and from going straight is
+    \[
+        u_1(T)=1q+(-k)(1-q)=(k+1)q-k.
+    \]
+    Equate: \(q-1=(k+1)q-k\), so \(q=(k-1)/k\).
+    \(p=(k-1)/k\) as well. The unique mixed equilibrium is
+    \[
+        \boxed{p=q=\frac{k-1}{k}}.
+    \]
+\end{solution}
+
+\subsection{}
+
+\begin{problem}
+    What is the probability that the two cars crash at the mixed-strategy Nash
+    equilibrium? Express your answer in terms of \(k\).
+\end{problem}
+
+\begin{solution}
+    A crash happens when both drivers choose \(T\). At the mixed
+    equilibrium, each chooses \(S\) with probability \((k-1)/k\), so they
+    choose \(T\) with probability \(1/k\). Their choices are independent,
+    so
+    \[
+        \boxed{\prob(\text{crash})=\frac{1}{k}\cdot\frac{1}{k}
+            =\frac{1}{k^2}}.
+    \]
+\end{solution}
+
+\subsection{}
+
+\begin{problem}
+    As \(k\) increases, what happens to the probability that both players will
+    choose to go straight and crash? In the context of what the value \(k\)
+    represents, explain why increasing \(k\) changes the probability of
+    crashing in this way.
+\end{problem}
+
+\begin{solution}
+    For \(k>1\), the probability
+    decreases as \(k\) increases and approaches zero. A larger \(k\) means a
+    bigger loss if the drivers collide. So in equilibrium, each driver
+    swerves more often: the probability of going straight falls
+    from \(1/k\) as \(k\) grows. Since a crash requires both drivers to go
+    straight, the probability that both go straight decreases.
+\end{solution}
+
+\section{}
+
+\begin{problem}
+    A zero-sum game describes a relationship, competition, or business deal where one person's gain is the other person's loss. In this problem, we will explore how to model zero-sum games using the frameworks from Chapter 6 in the textbook. Consider the zero-sum game where players are trying to guess the lowest number: First, Player 1 privately chooses an even integer between 0 and 999, and Player 2 privately chooses an odd integer between 0 and 999; in this first step, the players don't know each other's choice of integer. Next, both players announce their number. Finally, the player who chose the lower number wins and the player who chose the higher number loses; the loser pays the winner their announced number (i.e., if Player 1 chooses 4 and Player 2 chooses 11, then Player 2 loses and pays Player 1 \$4) in dollars.
+\end{problem}
+
+\subsection{}
+
+\begin{problem}
+    First, let's model this scenario as a game with two players. Each player's
+    strategies are all the numbers they are allowed to guess, so Player 1's
+    strategies are \(0, 2, \ldots, 998\) and Player 2's strategies are
+    \(1, 3, \ldots, 999\). Each player's payoff is the number of dollars they
+    gained (as a positive number) or lost (as a negative number, since both
+    players want to gain money) in the final step. Fill in the payoff
+    matrix with each player's payoffs for each choice of strategies in the game.
+\end{problem}
+
+\begin{solution}
+    A choice of \(0\) always produces the payoff pair \((0,0)\). Every other entry is filled
+    by comparing the row and column numbers and transferring the smaller
+    number to the player who chose it:
+    \[
+        \begin{array}{c|cccccc}
+                   & \multicolumn{6}{c}{\text{Player 2}}                                                      \\
+            \text{Player 1}
+                   & 1                                   & 3      & 5      & \cdots & 997        & 999        \\
+            \hline
+            0      & (0,0)                               & (0,0)  & (0,0)  & \cdots & (0,0)      & (0,0)      \\
+            2      & (-1,1)                              & (2,-2) & (2,-2) & \cdots & (2,-2)     & (2,-2)     \\
+            4      & (-1,1)                              & (-3,3) & (4,-4) & \cdots & (4,-4)     & (4,-4)     \\
+            \vdots & \vdots                              & \vdots & \vdots & \ddots & \vdots     & \vdots     \\
+            996    & (-1,1)                              & (-3,3) & (-5,5) & \cdots & (996,-996) & (996,-996) \\
+            998    & (-1,1)                              & (-3,3) & (-5,5) & \cdots & (-997,997) & (998,-998)
+        \end{array}
+    \]
+\end{solution}
+
+\subsection{}
+
+\begin{problem}
+    Find all pure-strategy Nash equilibria of the payoff matrix in part (a). Show all of your work.
+\end{problem}
+
+\begin{solution}
+    For any of Player 2's choices \(m\), Player 1 can choose the largest even
+    number below \(m\), so \(m-1\), and get \(m-1\). Any smaller
+    choice wins less, while any choice above \(m\) loses \(m\).
+    So \(m-1\) is Player 1's unique best response to \(m\).
+
+    For any of Player 1's choices \(n\). Player 2's best response is also the
+    biggest odd number below \(n\), which is \(n-1\): that choice wins
+    \(n-1\), but any larger odd choice loses \(n\). If \(n=0\), every
+    odd choice gives Player 2 payoff zero, so every column is a best
+    response. For a pure equilibrium with \(n>0\), the best-response
+    conditions would require both \(n=m-1\) and \(m=n-1\), which can't happen.
+    For \(n=0\), Player 1's best response requires \(m=1\);
+    Player 2 is indeed best responding to \(n=0\). So the unique
+    pure-strategy Nash equilibrium is
+    \[
+        \boxed{(0,1)}.
+    \]
+\end{solution}
+
+\subsection{}
+
+\begin{problem}
+    Next, we'll explore mixed strategies in a similar game. To make calculations easier, let's reduce the number of strategies in the previous game. We'll assume Player 1 is choosing between 0 and some even integer k, and Player 2 is choosing between 1 and the odd integer k+1. And the payoffs follow the same rules as the game in part b. Fill in the payoffs in the payoff matrix below, and explain why this game has no mixed-strategy Nash equilibria.
+
+    \[
+        \begin{array}{c|cc}
+              & 1 & k + 1 \\
+            \hline
+            0 &   &       \\
+            k &   &
+        \end{array}
+    \]
+\end{problem}
+
+\begin{solution}
+    \[
+        \begin{array}{c|cc}
+              & 1      & k+1    \\
+            \hline
+            0 & (0,0)  & (0,0)  \\
+            k & (-1,1) & (k,-k)
+        \end{array}
+    \]
+\end{solution}
+
+\section{}
+
+\begin{problem}
+    Alice and Bob plan to meet after class, but they forgot to decide where to meet and cannot communicate with each other before making their choices. There are two possible locations: the Campus Café and the Library. The game can be represented by the following payoff matrix:
+
+    \[
+        \begin{array}{c|cc}
+                                    & \multicolumn{2}{c}{\text{Player 2 (Bob)}}                  \\
+            \text{Player 1 (Alice)} & \text{Café}                               & \text{Library} \\
+            \hline
+            \text{Café}             & (6, 2)                                    & (0, 0)         \\
+            \text{Library}          & (0, 0)                                    & (3, 4)
+        \end{array}
+    \]
+
+    The Library, however, has traditionally been the place where students in their program meet when no location has been specified. Alice and Bob are both aware of this tradition.
+\end{problem}
+
+\subsection{}
+\begin{problem}
+    Find all Nash equilibria of this game.
+\end{problem}
+
+\begin{solution}
+    At \((\text{Café},\text{Café})\), Alice and Bob both want to stay. Same thing at
+    \((\text{Library},\text{Library})\). So the two
+    outcomes are pure-strategy equilibria; neither
+    mismatched outcome is an equilibrium, since a player facing the other
+    location would prefer to join the other player.
+
+    There is also a mixed equilibrium. Alice's
+    expected payoffs from Café and Library are \(6q\) and \(3(1-q)\);
+    indifference requires \(q=\frac13\). Bob's expected payoffs from Café
+    and Library are \(2p\) and \(4(1-p)\); indifference requires
+    \(p=\frac23\). So all Nash equilibria are
+    \[
+        (\text{Café},\text{Café}),\quad
+        (\text{Library},\text{Library}),\quad
+        \left(p=\frac23,\ q=\frac13\right).
+    \]
+\end{solution}
+
+\subsection{}
+\begin{problem}
+    Keeping in mind Schelling's idea of a focal point, which outcome do you think is the best prediction of where Alice and Bob will meet? Explain how the context of the problem affects your prediction.
+\end{problem}
+
+\begin{solution}
+    They are most likely to  meet at the Library. The payoff matrix
+    doesn't tell us which
+    one they will choose. But both people know that the Library is the
+    traditional meeting place when no location is specified which makes it a Schelling focal point: each can
+    anticipate that the other will treat it as the natural default and
+    coordinate there without communicating.
+\end{solution}
+
+\subsection{}
+\begin{problem}
+    Are all the Nash equilibria you identified in part (a) socially optimal? Explain your answer.
+\end{problem}
+
+\begin{solution}
+    The total payoff at \((\text{Café},\text{Café})\) is \(6+2=8\), while
+    at \((\text{Library},\text{Library})\) it is \(3+4=7\). So the Library equilibrium is
+    not the equilibrium with the greatest total payoff, and the mixed
+    equilibrium is not socially optimal either. At the mixed equilibrium,
+    the probability of Café--Café is \(2/9\), the probability of
+    Library--Library is \(2/9\), and the remaining probability \(5/9\)
+    is a mismatch. So its expected total payoff is
+    \[
+        \frac29(8)+\frac29(7)+\frac59(0)=\frac{10}{3},
+    \]
+\end{solution}
+
+\subsection{}
+\begin{problem}
+    Someone claims, “The conventional equilibrium that Alice and Bob tend to play must also be the best outcome for everyone.” Do you agree with this statement? Explain using your answers from parts (b) and (c).
+\end{problem}
+
+\begin{solution}
+    No, the Library convention can make
+    \((\text{Library},\text{Library})\) the most reasonable prediction, because
+    it is a focal point that helps Alice and Bob coordinate. But
+    Café--Café yields a total payoff of \(8\), compared with \(7\) at
+    Library--Library. But Café--Café doesn't make both people better off:
+    Alice prefers it, but Bob gets \(2\) there rather than \(4\) at the
+    Library.
+\end{solution}
 
 
 \end{document}
