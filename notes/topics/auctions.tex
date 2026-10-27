@@ -1,0 +1,45 @@
+\chapter{Auctions}
+
+\begin{itemize}
+    \item Types of auctions: ascending (English), descending (Dutch), first-price sealed-bid, second-price sealed-bid (Vickrey)
+    \item Second-price sealed-bid auction: buyers are players, bids are strategies---assume each buyer has a true value $v_i$ and submits a bid $b_i$; highest bidder ``payoff'' is $v_i - b_j$ (the money saved compared to their true value), where $b_j$ is the second-highest bid; dominant strategy is to bid their true value $b_i = v_i$; truthful bidding leads to efficient allocation of the item.
+\end{itemize}
+
+\section{Bipartite Matching}
+
+\begin{itemize}
+    \item Bipartite graph: graph whose vertices can be divided into two disjoint sets where no two vertices within the same set are adjacent
+    \item Bipartite (perfect) matching: set of edges in a bipartite graph such that no two edges share a common vertex
+    \item Maximum bipartite matching: bipartite matching that contains the largest possible number of edges
+    \item Constricted set: subset of vertices in one partition of a bipartite graph such that the number of neighbors in the other partition is strictly smaller than the number of vertices in the subset
+\end{itemize}
+
+\subsection{Weighted Edges}
+\begin{itemize}
+    \item Weighted bipartite graph: bipartite graph where each edge has an associated weight
+    \item Maximum weight bipartite matching (optimal assignment): bipartite matching that maximizes the sum of the weights of the selected edges
+\end{itemize}
+
+\subsection{Finding Market-Clearing Prices}
+
+\begin{itemize}
+    \item Market-clearing prices: prices assigned to edges in a weighted bipartite graph such that each vertex in one partition is matched to a vertex in the other partition with the highest possible weight given the prices, ensuring that the market clears (all supply meets demand); aka, competitive equilibrium prices.
+    \item Preferred-seller graph: bipartite graph constructed based on the current prices, where each vertex in one partition points to its most preferred vertex in the other partition (buyers pick their favorite sellers based on payoffs)
+    \item Iterative procedure to find market-clearing prices:
+          \begin{enumerate}
+              \item Initialize prices for all edges, typically starting with zero.
+              \item Construct preferred-seller graph based on the current prices, where each vertex in one partition points to its most preferred vertex in the other partition.
+              \item If there is no perfect matching, increase the prices of the nodes with multiple preferred edges and repeat the process until a perfect matching is found.
+          \end{enumerate}
+\end{itemize}
+
+\section{Restricted Markets}
+
+\begin{itemize}
+    \item Power in social networks: the ability of a node to influence or control the flow of information or resources within the network; often related to the node's position and connectivity within the network
+    \item Exchange experiment: experimental setup used to study how individuals trade or exchange resources within a network, often used to analyze the effects of network structure on bargaining power and market outcomes
+    \item Stability in network exchange: a condition where no subset of nodes can rearrange their exchanges to make themselves strictly better off, ensuring that the network exchange structure remains stable over time
+          \begin{itemize}
+              \item Unstable where connected nodes not exchanging have a total gain less than the maximum possible gain
+          \end{itemize}
+\end{itemize}
