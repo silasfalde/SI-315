@@ -1,0 +1,37 @@
+digraph HITS {
+    graph [
+        rankdir=LR,
+        nodesep=0.2,
+        ranksep=0.9,
+        pad=0.1,
+        margin=0,
+        ordering=out,
+        fontsize=12
+    ];
+    node [shape=circle, width=0.35, fixedsize=true, fontsize=12];
+    edge [arrowsize=0.7];
+
+    subgraph cluster_hubs {
+        label="Hubs";
+        labelloc=t;
+        color=none;
+        rank=same;
+        e; d; c; b; a;
+    }
+
+    subgraph cluster_authorities {
+        label="Authorities";
+        labelloc=t;
+        color=none;
+        rank=same;
+        w; z; y; x;
+    }
+
+    a -> x;
+    b -> x;
+    c -> x;
+    c -> y;
+    d -> y;
+    d -> z;
+    e -> w;
+}
