@@ -1,4 +1,4 @@
-\documentclass[newpages]{assignment}
+\documentclass[newpages, arabicsubsec]{assignment}
 
 \class{SI 315}
 \title{Assignment 6}
@@ -58,18 +58,68 @@
     There are only two possible selling prices: 1 and 3, with 3 only being possible when there are at least two bidders both bidding 3. This is unlikely with only two bidders ($p = 0.25$). But, increasing the number of bidders increased the likelihood of having at least two bidders with a value of 3 ($p = 0.5$), which increased the expected value of the second-highest bid.
 \end{solution}
 
-\subsection{Part 2}
+\subsection{Inventing Auctions}
 
 \begin{problem}
     Give an example of an auction (i.e., a set of bidders, true values, and bids) with 5 bidders that satisfies each property. If there is a tie at a bid of \(x\) for the highest bid the winner is selected at random from among the highest bidders and the price is \(x\). Explain why your auction satisfies the desired property.
 
-    \textit{Note: Each property is independent (so you need a different example for each part, and the example in, say, part a only needs to satisfy property a).}
-
-    \begin{enumerate}[label=\alph*.]
-        \item All bidders have the same payoff from a first-price sealed-bid auction as from a second-price sealed-bid auction.
-        \item The average payoff in a sealed-bid all-pay auction (i.e., whoever bids the highest wins the item, but everyone has to pay their own bid) is 5.
-    \end{enumerate}
+    \textit{Note: Each property is independent (so you need a different example for each part, and the example in, say, part (a) only needs to satisfy property (a)).}
 \end{problem}
+
+\subsubsection{First-Price Same as Second-Price}
+
+\begin{problem}
+    All bidders have the same payoff from a first-price sealed-bid auction as from a second-price sealed-bid auction.
+\end{problem}
+\begin{solution}
+    This happens when the first price is the same value as the second price. In this case, all bidders who lose the bid get the same payoff of zero and the winner still pays the same price (assuming the same bidder wins by chance in both cases).
+
+    For example:
+
+    \begin{table}[h]
+        \centering
+        \begin{tabular}{lccc}
+            \toprule
+            Bidder \# & Value & Bid        & Payoff \\
+            \midrule
+            1         & 6     & \textbf{4} & 2      \\
+            2         & 5     & \textbf{4} & 0      \\
+            3         & 4     & 3          & 0      \\
+            4         & 4     & 3          & 0      \\
+            5         & 3     & 2          & 0      \\
+            \bottomrule
+        \end{tabular}
+    \end{table}
+
+    Either way, the winner (bidder 1) pays the same final price (and, therefore, has the same payoff) because the first and second bids are the same.
+\end{solution}
+
+\subsubsection{All-Pay Auction}
+\begin{problem}
+    The average payoff in a sealed-bid all-pay auction (i.e., whoever bids the highest wins the item, but everyone has to pay their own bid) is 5.
+\end{problem}
+\begin{solution}
+    This can only happen where the winner bids significantly below their true value, enough to account for the losses of all other bidders. The total payoff of the entire bidding pool has to be 25 to make an average payoff of 5 per bidder. For example, let the winner have a payoff of 45 and let all other bidders have a payoff of -5. This would sum to $45 - 4 \cdot 5 = 25$ and make an average payoff of $25/5 = 5$.
+
+    We can make this happen with the following auction:
+
+    \begin{table}[h]
+        \centering
+        \begin{tabular}{lccc}
+            \toprule
+            Bidder \# & Value & Bid & Payoff \\
+            \midrule
+            1         & 100   & 55  & 45     \\
+            2         & 90    & 5   & -5     \\
+            3         & 80    & 5   & -5     \\
+            4         & 70    & 5   & -5     \\
+            5         & 60    & 5   & -5     \\
+            \bottomrule
+        \end{tabular}
+    \end{table}
+
+    It doesn't really matter the values of the losing bidders, they only need to all lose and pay a total of \$20.
+\end{solution}
 
 \section{Problem 2: Third-Price Sealed-Bid Auction}
 
