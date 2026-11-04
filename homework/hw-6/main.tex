@@ -14,20 +14,20 @@
 \subsection{Expected Revenue}
 
 \begin{problem}
-    In this problem we will ask how the \textit{number of bidders} in a second-price, sealed-bid auction affects how much the seller can expect to receive for his object. Assume that there are \textit{two bidders} who have independent, private values \(v_i\) which are either \underline{1 or 3}. For each bidder, the probabilities of 1 and 3 are both \(1/2\). (If there is a tie at a bid of \(x\) for the highest bid, the winner is \textit{selected at random} from among the highest bidders and the price is \(x\)).
+In this problem we will ask how the \textit{number of bidders} in a second-price, sealed-bid auction affects how much the seller can expect to receive for his object. Assume that there are \textit{two bidders} who have independent, private values \(v_i\) which are either \underline{1 or 3}. For each bidder, the probabilities of 1 and 3 are both \(1/2\). (If there is a tie at a bid of \(x\) for the highest bid, the winner is \textit{selected at random} from among the highest bidders and the price is \(x\)).
 \end{problem}
 
 \subsubsection{Expected Revenue with 2 Bidders}
 \begin{problem}
-    Show that the seller's expected revenue is \(6/4\).
+Show that the seller's expected revenue is \(6/4\).
 \end{problem}
 \begin{solution}
-    We examine the four equally-likely possible cases for $(v_0, v_1)$: (1, 1), (3, 1), (1, 3), and (3, 3). In all but the last, (3, 3), the final price is 1, with the price of the last case being 3. So, the expected payout for the seller is $\frac{3}{4} \cdot 1 + \frac{1}{4} \cdot 3 = \frac{6}{4}$.
+    We examine the four equally likely possible cases for $(v_1, v_2)$: (1, 1), (3, 1), (1, 3), and (3, 3). In all but the last, the final price is 1; in the last case, it is 3. So the seller's expected revenue is $\frac{3}{4} \cdot 1 + \frac{1}{4} \cdot 3 = \frac{6}{4}$.
 \end{solution}
 
 \subsubsection{Expected Revenue with 3 Bidders}
 \begin{problem}
-    Now let's suppose that there are three bidders who have independent, private values \(v_i\) which are either 1 or 3. For each bidder, the probabilities of 1 and 3 are both \(1/2\). What is the seller's expected revenue in this case?
+Now let's suppose that there are three bidders who have independent, private values \(v_i\) which are either 1 or 3. For each bidder, the probabilities of 1 and 3 are both \(1/2\). What is the seller's expected revenue in this case?
 \end{problem}
 \begin{solution}
     There are eight cases:
@@ -52,29 +52,27 @@
 
 \subsubsection{Explanation}
 \begin{problem}
-    Briefly explain why changing the number of bidders affects the seller's expected revenue.
+Briefly explain why changing the number of bidders affects the seller's expected revenue.
 \end{problem}
 \begin{solution}
-    There are only two possible selling prices: 1 and 3, with 3 only being possible when there are at least two bidders both bidding 3. This is unlikely with only two bidders ($p = 0.25$). But, increasing the number of bidders increased the likelihood of having at least two bidders with a value of 3 ($p = 0.5$), which increased the expected value of the second-highest bid.
+    There are only two possible selling prices: 1 and 3, with 3 only being possible when at least two bidders bid 3. This is unlikely with only two bidders ($p = 0.25$). Increasing the number of bidders to three raises the likelihood of at least two bidders having a value of 3 to \(p=0.5\), which increases the expected value of the second-highest bid.
 \end{solution}
 
 \subsection{Inventing Auctions}
 
 \begin{problem}
-    Give an example of an auction (i.e., a set of bidders, true values, and bids) with 5 bidders that satisfies each property. If there is a tie at a bid of \(x\) for the highest bid the winner is selected at random from among the highest bidders and the price is \(x\). Explain why your auction satisfies the desired property.
+Give an example of an auction (i.e., a set of bidders, true values, and bids) with 5 bidders that satisfies each property. If there is a tie at a bid of \(x\) for the highest bid the winner is selected at random from among the highest bidders and the price is \(x\). Explain why your auction satisfies the desired property.
 
-    \textit{Note: Each property is independent (so you need a different example for each part, and the example in, say, part (a) only needs to satisfy property (a)).}
+\textit{Note: Each property is independent (so you need a different example for each part, and the example in, say, part (a) only needs to satisfy property (a)).}
 \end{problem}
 
 \subsubsection{First-Price Same as Second-Price}
 
 \begin{problem}
-    All bidders have the same payoff from a first-price sealed-bid auction as from a second-price sealed-bid auction.
+All bidders have the same payoff from a first-price sealed-bid auction as from a second-price sealed-bid auction.
 \end{problem}
 \begin{solution}
-    This happens when the first price is the same value as the second price. In this case, all bidders who lose the bid get the same payoff of zero and the winner still pays the same price (assuming the same bidder wins by chance in both cases).
-
-    For example:
+    This happens when the highest and second-highest bids are equal. For example, if bidder 1 is selected to win the tie in both auctions:
 
     \begin{table}[h]
         \centering
@@ -91,15 +89,15 @@
         \end{tabular}
     \end{table}
 
-    Either way, the winner (bidder 1) pays the same final price (and, therefore, has the same payoff) because the first and second bids are the same.
+    In both auctions, the winner pays \$4 and has payoff \(6-4=2\); all other bidders lose and have payoff 0. If bidder 2 is selected to win the tie instead, that bidder pays \$4 and has payoff \(5-4=1\) in either auction, while everyone else has payoff 0.
 \end{solution}
 
 \subsubsection{All-Pay Auction}
 \begin{problem}
-    The average payoff in a sealed-bid all-pay auction (i.e., whoever bids the highest wins the item, but everyone has to pay their own bid) is 5.
+The average payoff in a sealed-bid all-pay auction (i.e., whoever bids the highest wins the item, but everyone has to pay their own bid) is 5.
 \end{problem}
 \begin{solution}
-    This can only happen where the winner bids significantly below their true value, enough to account for the losses of all other bidders. The total payoff of the entire bidding pool has to be 25 to make an average payoff of 5 per bidder. For example, let the winner have a payoff of 45 and let all other bidders have a payoff of -5. This would sum to $45 - 4 \cdot 5 = 25$ and make an average payoff of $25/5 = 5$.
+    The total payoff must be 25 to give an average payoff of 5 across five bidders. One example is a winner with a payoff of 45 and four losing bidders with payoffs of \(-5\) each; this sums to \(45-4\cdot5=25\), for an average of \(25/5=5\).
 
     We can make this happen with the following auction:
 
@@ -124,130 +122,209 @@
 \section{Third-Price Sealed-Bid Auction}
 
 \begin{problem}
-    In a third-price sealed-bid auction, where the buyer with the highest bid buys the item and pays the third-highest bid, is bidding your true value always a dominant strategy? If yes, provide a proof. If not, provide a counterexample.
+In a third-price sealed-bid auction, where the buyer with the highest bid buys the item and pays the third-highest bid, is bidding your true value always a dominant strategy? If yes, provide a proof. If not, provide a counterexample.
 \end{problem}
 
 \begin{solution}
+    Bidding your true value is not always a dominant strategy because there is incentive to bid higher than your true value when the third bid is lower than your true value. For example:
 
+    \begin{table}[h]
+        \centering
+        \begin{tabular}{lccc}
+            \toprule
+            Bidder \# & Value & Bid & Payoff \\
+            \midrule
+            1         & 5     & 5   & 0      \\
+            2         & 10    & 10  & 9      \\
+            3         & 1     & 1   & 0      \\
+            \bottomrule
+        \end{tabular}
+    \end{table}
+
+    When bidder 1 bids their true value of 5, they lose and have payoff 0. If they instead bid 11, they win and pay the third-highest bid, 1, for payoff 4. In this case, truthful bidding is not the dominant strategy.
 \end{solution}
 
 \section{Procurement Auctions}
 
 \begin{problem}
-    A city wants to hire one contractor. Each contractor submits a sealed bid. Each contractor also has a publicly known quality credit. The quality credit represents the monetary value the city assigns to the contractor's quality, such as expected savings from fewer future repairs or lower maintenance costs.
+A city wants to hire one contractor. Each contractor submits a sealed bid. Each contractor also has a publicly known quality credit. The quality credit represents the monetary value the city assigns to the contractor's quality, such as expected savings from fewer future repairs or lower maintenance costs.
 
-    To account for differences in quality, the city calculates each contractor's adjusted bid as follows:
-    \[
-        \text{Adjusted bid} = \text{Bid} - \text{Quality credit}
-    \]
-    The city awards the contract to the contractor with the lowest adjusted bid. The winning contractor's payoff is the payment received minus their true cost, while a losing contractor's payoff is 0. Assume bids must be whole dollars.
+To account for differences in quality, the city calculates each contractor's adjusted bid as follows:
+\[
+    \text{Adjusted bid} = \text{Bid} - \text{Quality credit}
+\]
+The city awards the contract to the contractor with the lowest adjusted bid. The winning contractor's payoff is the payment received minus their true cost, while a losing contractor's payoff is 0. Assume bids must be whole dollars.
 
+\begin{table}[h!]
+    \centering
+    \begin{tabular}{lcc}
+        \hline
+        Contractor & True cost & Quality credit \\
+        \hline
+        A          & \$70      & \$30           \\
+        B          & \$58      & \$15           \\
+        C          & \$49      & \$5            \\
+        D          & \$45      & \$0            \\
+        \hline
+    \end{tabular}
+\end{table}
+\end{problem}
+
+\subsection*{(a)}
+\begin{problem}
+Suppose all contractors bid their true costs. Compute each contractor's adjusted bid and determine who wins. Does the contractor with the lowest submitted bid win?
+\end{problem}
+
+\begin{solution}
     \begin{table}[h!]
         \centering
-        \begin{tabular}{lcc}
+        \begin{tabular}{lcccc}
             \hline
-            Contractor & True cost & Quality credit \\
+            Contractor & True cost & Quality credit & Bid  & Adjusted Bid \\
             \hline
-            A          & \$70      & \$30           \\
-            B          & \$58      & \$15           \\
-            C          & \$49      & \$5            \\
-            D          & \$45      & \$0            \\
+            A          & \$70      & \$30           & \$70 & \$40         \\
+            B          & \$58      & \$15           & \$58 & \$43         \\
+            C          & \$49      & \$5            & \$49 & \$44         \\
+            D          & \$45      & \$0            & \$45 & \$45         \\
             \hline
         \end{tabular}
     \end{table}
+    Contractor D wins because D has the lowest submitted bid, but A has the lowest adjusted bid, so no the lowest bidder does not always win.
+\end{solution}
 
-    \begin{enumerate}[label=\alph*.]
-        \item Suppose all contractors bid their true costs. Compute each contractor's adjusted bid and determine who wins. Does the contractor with the lowest submitted bid win?
-        \item Now consider the procurement version of a first-price sealed-bid auction: the contractor with the lowest adjusted bid wins and is paid their own bid (not the adjusted bid).
+\subsection*{(b)}
+\begin{problem}
+Now consider the procurement version of a first-price sealed-bid auction: the contractor with the lowest adjusted bid wins and is paid their own bid (not the adjusted bid).
 
-              Suppose B, C, and D bid their true costs, and A knows this. Holding the other contractors' bids fixed, what bid should A submit to maximize A's payoff?
+Suppose B, C, and D bid their true costs, and A knows this. Holding the other contractors' bids fixed, what bid should A submit to maximize A's payoff?
 
-              Next, suppose instead that A, C, and D bid their true costs, and B knows this. Would B want to submit a bid low enough to beat A's adjusted bid? Explain your answer in terms of B's payoff. Explain.
-        \item Now consider the procurement analog of a second-price sealed-bid auction. The contractor with the lowest adjusted bid wins, but instead of receiving their own submitted bid, the winner is paid based on the second-lowest adjusted bid and their own quality credit.
-
-              Specifically, the winner's payment is calculated as:
-              \[
-                  \text{Winner's payment}
-                  =
-                  \text{Second-lowest adjusted bid}
-                  +
-                  \text{Winner's quality credit}
-              \]
-              For example, suppose the lowest adjusted bid is \$40, the second-lowest adjusted bid is \$50, and the bidder with the lowest adjusted bid has a quality credit of \$20. The winner (the lowest adjusted bidder) would receive \$50 (the lowest adjusted bid) + \$20 (the winner's quality credit) = \$70.
-
-              Suppose everyone bids their true cost, but B's quality credit is now \(x\), where \(0 \leq x \leq 25\). All other quality check values are as shown in the table. Determine who wins and how much the winner is paid as a function of \(x\). What happens at the value of \(x\) where A and B tie?
-    \end{enumerate}
+Next, suppose instead that A, C, and D bid their true costs, and B knows this. Would B want to submit a bid low enough to beat A's adjusted bid? Explain your answer in terms of B's payoff. Explain.
 \end{problem}
+\begin{solution}
+    With B, C, and D bidding their true costs, their adjusted bids are \$43, \$44, and \$45. A wins by bidding anything below \$73 ($43 + 30$). So the highest bid is \$72, giving A a payoff of \(72-70=\$2\). A bid of \$73 ties B at an adjusted bid of \$43; if ties are broken randomly, its expected payoff is only \(\frac{1}{2}(73-70)=\$1.50\), so \$72 is best.
+
+    If A, C, and D bid their true costs, A's adjusted bid is \(70-30=\$40\). For B to beat A, B needs to bid below \$55 ($40 + 15$). The highest bid that does so is \$54, which gives B a payoff of \(54-58=-\$4\) if it wins. So B prefers to lose and receive a payoff of 0 rather than submit a bid low enough to win.
+\end{solution}
+
+\subsection*{(c)}
+\begin{problem}
+Now consider the procurement analog of a second-price sealed-bid auction. The contractor with the lowest adjusted bid wins, but instead of receiving their own submitted bid, the winner is paid based on the second-lowest adjusted bid and their own quality credit.
+
+Specifically, the winner's payment is calculated as:
+\[
+    \text{Winner's payment}
+    =
+    \text{Second-lowest adjusted bid}
+    +
+    \text{Winner's quality credit}
+\]
+For example, suppose the lowest adjusted bid is \$40, the second-lowest adjusted bid is \$50, and the bidder with the lowest adjusted bid has a quality credit of \$20. The winner (the lowest adjusted bidder) would receive \$50 (the second-lowest adjusted bid) + \$20 (the winner's quality credit) = \$70.
+
+Suppose everyone bids their true cost, but B's quality credit is now \(x\), where \(0 \leq x \leq 25\). All other quality credit values are as shown in the table. Determine who wins and how much the winner is paid as a function of \(x\). What happens at the value of \(x\) where A and B tie?
+\end{problem}
+\begin{solution}
+    The adjusted bids are \(40\) for A, \(58-x\) for B, \(44\) for C, and \(45\) for D, so:
+
+    \begin{itemize}
+        \item If \(0\leq x\leq14\), A wins and the second-lowest adjusted bid is \(44\), so A is paid \(44+30=\$74\).
+        \item If \(14<x<18\), A still wins but B has the second-lowest adjusted bid \(58-x\), so A is paid \((58-x)+30=\$88-x\).
+        \item If \(x=18\), A and B tie for the lowest adjusted bid at \(40\). The problem does not specify how this tie is broken. If A wins, A is paid \(40+30=\$70\); if B wins, B is paid \(40+18=\$58\).
+        \item If \(18<x\leq25\), B wins, and A's adjusted bid of \(40\) is the second-lowest. B is paid \(40+x\) dollars.
+    \end{itemize}
+\end{solution}
 
 \section{Market-Clearing Prices}
 
 \begin{problem}
-    The tables below show the valuation of 3 buyers \(x, y, z\) for 3 different houses sold by A, B, C. For each table, find the market-clearing prices following the procedure presented in class. Show the price of each house and the preferred-seller graph at the end of each round of the procedure.
+The tables below show the valuation of 3 buyers \(x, y, z\) for 3 different houses sold by A, B, C. For each table, find the market-clearing prices following the procedure presented in class. Show the price of each house and the preferred-seller graph at the end of each round of the procedure.
 
-    \begin{enumerate}[label=\alph*.]
-        \item
-              \begin{center}
-                  \begin{tabular}{lccc}
-                      \hline
-                      Buyer & \shortstack{Valuation for\\A's house} & \shortstack{Valuation for\\B's house} & \shortstack{Valuation for\\C's house} \\
-                      \hline
-                      \(x\) & 2                                     & 2                                     & 1                                     \\
-                      \(y\) & 1                                     & 5                                     & 3                                     \\
-                      \(z\) & 2                                     & 3                                     & 0                                     \\
-                      \hline
-                  \end{tabular}
-              \end{center}
-        \item
-              \begin{center}
-                  \begin{tabular}{lccc}
-                      \hline
-                      Buyer & \shortstack{Valuation for\\A's house} & \shortstack{Valuation for\\B's house} & \shortstack{Valuation for\\C's house} \\
-                      \hline
-                      \(x\) & 9                                     & 3                                     & 1                                     \\
-                      \(y\) & 7                                     & 5                                     & 3                                     \\
-                      \(z\) & 5                                     & 4                                     & 8                                     \\
-                      \hline
-                  \end{tabular}
-              \end{center}
-        \item
-              \begin{center}
-                  \begin{tabular}{lccc}
-                      \hline
-                      Buyer & \shortstack{Valuation for\\A's house} & \shortstack{Valuation for\\B's house} & \shortstack{Valuation for\\C's house} \\
-                      \hline
-                      \(x\) & 1                                     & 8                                     & 4                                     \\
-                      \(y\) & 7                                     & 4                                     & 3                                     \\
-                      \(z\) & 6                                     & 3                                     & 4                                     \\
-                      \hline
-                  \end{tabular}
-              \end{center}
-    \end{enumerate}
+\begin{enumerate}[label=\alph*.]
+    \item
+          \begin{center}
+              \begin{tabular}{lccc}
+                  \hline
+                  Buyer & \shortstack{Valuation for         \\A's house} & \shortstack{Valuation for\\B's house} & \shortstack{Valuation for\\C's house} \\
+                  \hline
+                  \(x\) & 2                         & 2 & 1 \\
+                  \(y\) & 1                         & 5 & 3 \\
+                  \(z\) & 2                         & 3 & 0 \\
+                  \hline
+              \end{tabular}
+          \end{center}
+    \item
+          \begin{center}
+              \begin{tabular}{lccc}
+                  \hline
+                  Buyer & \shortstack{Valuation for         \\A's house} & \shortstack{Valuation for\\B's house} & \shortstack{Valuation for\\C's house} \\
+                  \hline
+                  \(x\) & 9                         & 3 & 1 \\
+                  \(y\) & 7                         & 5 & 3 \\
+                  \(z\) & 5                         & 4 & 8 \\
+                  \hline
+              \end{tabular}
+          \end{center}
+    \item
+          \begin{center}
+              \begin{tabular}{lccc}
+                  \hline
+                  Buyer & \shortstack{Valuation for         \\A's house} & \shortstack{Valuation for\\B's house} & \shortstack{Valuation for\\C's house} \\
+                  \hline
+                  \(x\) & 1                         & 8 & 4 \\
+                  \(y\) & 7                         & 4 & 3 \\
+                  \(z\) & 6                         & 3 & 4 \\
+                  \hline
+              \end{tabular}
+          \end{center}
+\end{enumerate}
 \end{problem}
+\begin{solution}
+    Write the prices as \((p_A,p_B,p_C)\). Each buyer points to every house that maximizes their valuation minus its price; after any round without a perfect matching, raise by \$1 the price of each house receiving multiple edges.
+
+    \begin{enumerate}
+        \item At \((0,0,0)\), the preferred-seller graph is \(x\to\{A,B\},\ y\to\{B\},\ z\to\{B\}\), so there is no perfect matching. Raise \(p_B\) to get \((0,1,0)\). The graph is then \(x\to\{A\},\ y\to\{B\},\ z\to\{A,B\}\), still with no perfect matching; A and B each receive multiple edges, so raise both prices. At \((1,2,0)\), the graph is \(x\to\{A,C\},\ y\to\{B,C\},\ z\to\{A,B\}\), which has the perfect matching \(x\to C,\ y\to B,\ z\to A\). The market-clearing prices are \((1,2,0)\).
+        \item At \((0,0,0)\), the graph is \(x\to\{A\},\ y\to\{A\},\ z\to\{C\}\), so raise \(p_A\) to 1. The graph at \((1,0,0)\) is unchanged, so raise \(p_A\) again. At \((2,0,0)\), the graph is \(x\to\{A\},\ y\to\{A,B\},\ z\to\{C\}\), which has the perfect matching \(x\to A,\ y\to B,\ z\to C\). The market-clearing prices are \((2,0,0)\).
+        \item At \((0,0,0)\), the graph is \(x\to\{B\},\ y\to\{A\},\ z\to\{A\}\), so raise \(p_A\) to 1. The graph at \((1,0,0)\) is unchanged, so raise \(p_A\) again. At \((2,0,0)\), the graph is \(x\to\{B\},\ y\to\{A\},\ z\to\{A,C\}\), which has the perfect matching \(x\to B,\ y\to A,\ z\to C\). The market-clearing prices are \((2,0,0)\).
+    \end{enumerate}
+\end{solution}
 
 \section{Job Market}
 
 \begin{problem}
-    Suppose that there are a set of 3 employees in a job market, A-C, and a set of 3 employers, D-F. The valuations of the employers for the employees are as follows (\(x\) means unknown).
+Suppose that there are a set of 3 employees in a job market, A-C, and a set of 3 employers, D-F. The valuations of the employers for the employees are as follows (\(x\) means unknown).
 
-    \begin{table}[h!]
-        \centering
-        \begin{tabular}{lccc}
-            \hline
-                       & \shortstack{Value for\\Employee A} & \shortstack{Value for\\Employee B} & \shortstack{Value for\\Employee C} \\
-            \hline
-            Employer D & 6                                  & 3                                  & 6                                  \\
-            Employer E & 7                                  & 2                                  & \(x\)                              \\
-            Employer F & 5                                  & 4                                  & 6                                  \\
-            \hline
-        \end{tabular}
-    \end{table}
+\begin{table}[h!]
+    \centering
+    \begin{tabular}{lccc}
+        \hline
+                   & \shortstack{Value for             \\Employee A} & \shortstack{Value for\\Employee B} & \shortstack{Value for\\Employee C} \\
+        \hline
+        Employer D & 6                     & 3 & 6     \\
+        Employer E & 7                     & 2 & \(x\) \\
+        Employer F & 5                     & 4 & 6     \\
+        \hline
+    \end{tabular}
+\end{table}
 
-    Also, suppose that Employee A is asking for a salary of 3, Employee B is asking for a salary of 1, and Employee C is asking for a salary of 5. You can think of the salaries as the prices in this market.
+Also, suppose that Employee A is asking for a salary of 3, Employee B is asking for a salary of 1, and Employee C is asking for a salary of 5. You can think of the salaries as the prices in this market.
 
-    \begin{enumerate}[label=\alph*.]
-        \item What is the smallest value of \(x\) such that the given set of salaries (3 for Employee A, 1 for Employee B, and 5 for Employee C) are market-clearing? Explain.
-        \item Under the value of \(x\) found in (a), what is the total payoff? What is the total valuation in the optimal assignment of employers to employees?
-    \end{enumerate}
+\begin{enumerate}[label=\alph*.]
+    \item What is the smallest value of \(x\) such that the given set of salaries (3 for Employee A, 1 for Employee B, and 5 for Employee C) are market-clearing? Explain.
+    \item Under the value of \(x\) found in (a), what is the total payoff? What is the total valuation in the optimal assignment of employers to employees?
+\end{enumerate}
 \end{problem}
+\begin{solution}
+    With salaries \((3,1,5)\), the employer payoffs (valuation minus salary) are:
+    \[
+        \begin{array}{c|ccc}
+              & A & B & C   \\ \hline
+            D & 3 & 2 & 1   \\
+            E & 4 & 1 & x-5 \\
+            F & 2 & 3 & 1
+        \end{array}
+    \]
+    Employers D and F prefer A and B, respectively. For the market to clear, E must be willing to take C, which requires \(x-5\geq4\), or \(x\geq9\). At \(x=9\), E is indifferent between A and C, so assigning D to A, F to B, and E to C gives a perfect matching. Hence the smallest value is \(x=9\).
+
+    Under that assignment, total employer payoff is \((6-3)+(4-1)+(9-5)=\$10\). The total valuation is \(6+4+9=\$19\), which is the maximum: assigning D to A, F to B, and E to C yields 19, more than any other assignment. Including the employees' salaries as their payoffs adds \(3+1+5=\$9\), so the combined payoff of employers and employees is also \$19.
+\end{solution}
 
 \end{document}
