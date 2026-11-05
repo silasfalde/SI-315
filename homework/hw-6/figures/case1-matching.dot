@@ -1,0 +1,25 @@
+digraph case1_matching {
+    graph [rankdir=LR, nodesep=0.2, ranksep=0.9, fontsize=12];
+    node [shape=rectangle, width=1.8, height=1.05, fixedsize=true, fontsize=24, margin=0.08];
+    edge [arrowsize=0.7];
+    
+    subgraph cluster_buyers {
+        rank=same;
+        z; y; x;
+        label="Buyers";
+        labelloc=t;
+        color=none;
+    }
+    
+    subgraph cluster_sellers {
+        rank=same;
+        C; B; A;
+        label="Sellers";
+        labelloc=t;
+        color=none;
+    }
+    
+    x -> C;
+    y -> B;
+    z -> A;
+}

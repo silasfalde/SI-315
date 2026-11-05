@@ -1,0 +1,27 @@
+digraph case3_step1 {
+    graph [layout=neato, overlap=false, splines=true, fontsize=13, margin=0.05];
+    node [shape=rectangle, width=1.8, height=1.05, fixedsize=true, fontsize=24, margin=0.08];
+    edge [arrowsize=0.6];
+    
+    subgraph cluster_buyers {
+        z [label=<<TABLE BORDER="0" CELLBORDER="0" CELLSPACING="0" CELLPADDING="2"><TR><TD ROWSPAN="2"><FONT POINT-SIZE="24">z</FONT></TD><TD><FONT POINT-SIZE="24">V: 6, 3, 4</FONT></TD></TR><TR><TD><FONT POINT-SIZE="24">P: 5, 3, 4</FONT></TD></TR></TABLE>>, pos="190,0!"];
+        y [label=<<TABLE BORDER="0" CELLBORDER="0" CELLSPACING="0" CELLPADDING="2"><TR><TD ROWSPAN="2"><FONT POINT-SIZE="24">y</FONT></TD><TD><FONT POINT-SIZE="24">V: 7, 4, 3</FONT></TD></TR><TR><TD><FONT POINT-SIZE="24">P: 6, 4, 3</FONT></TD></TR></TABLE>>, pos="190,84!"];
+        x [label=<<TABLE BORDER="0" CELLBORDER="0" CELLSPACING="0" CELLPADDING="2"><TR><TD ROWSPAN="2"><FONT POINT-SIZE="24">x</FONT></TD><TD><FONT POINT-SIZE="24">V: 1, 8, 4</FONT></TD></TR><TR><TD><FONT POINT-SIZE="24">P: 0, 8, 4</FONT></TD></TR></TABLE>>, pos="190,168!"];
+        label="Buyers";
+        labelloc=t;
+        color=none;
+    }
+    
+    subgraph cluster_sellers {
+        C [label="C\np=0", pos="0,0!"];
+        B [label="B\np=0", pos="0,84!"];
+        A [label="A\np=1", pos="0,168!"];
+        label="Sellers";
+        labelloc=t;
+        color=none;
+    }
+    
+    x -> B;
+    y -> A;
+    z -> A;
+}
