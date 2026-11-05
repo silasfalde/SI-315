@@ -90,6 +90,59 @@
     \item Counts the number and quality of links to a page to determine its importance
           \begin{enumerate}
               \item Assign equal scores to all nodes: $\frac{1}{n}$
-              \item Update scores based on the scores of incoming links, typically using the formula: \(\PR(i) = \sum_{j \in M(i)} \frac{\PR(j)}{L(j)}\) where $M(i)$ is the set of nodes linking to $i$ and $L(j)$ is the number of outbound links from node $j$
+              \item Update scores based on the scores of incoming links, typically using the formula: \(\PageRank(i) = \sum_{j \in \InboundLinks(i)} \frac{\PageRank(j)}{\magnitude{\OutboundLinks(j)}}\) where $\InboundLinks(i)$ is the set of nodes linking to $i$ and $\magnitude{\OutboundLinks(j)}$ is the number of outbound links from node $j$
           \end{enumerate}
+    \item Rankings for iteration $i$ are calculated using rankings from iteration $i - 1$, so do not use rankings calculated in the current iteration
+\end{itemize}
+
+\begin{figure}[h]
+    \begin{subfigure}{0.45\textwidth}
+        \includegraphics[width=\textwidth]{figures/pagerank-network.png}
+        \caption{Network for PageRank.}
+    \end{subfigure}
+    \hfill
+    \begin{subfigure}{0.45\textwidth}
+        \centering
+        \begin{align*}
+            \PageRank_{t+1}(A) & = \frac{\PageRank_t(C)}{2}                            \\
+            \PageRank_{t+1}(B) & = \frac{\PageRank_t(C)}{2} + \frac{\PageRank_t(D)}{2} \\
+            \PageRank_{t+1}(C) & = \frac{\PageRank_t(D)}{2}                            \\
+            \PageRank_{t+1}(D) & = \PageRank_t(A) + \PageRank_t(B)
+        \end{align*}
+        \caption{Update equations for the PageRank of each node.}
+    \end{subfigure}
+
+    \begin{center}
+        \begin{subfigure}{0.45\textwidth}
+            \centering
+            \begin{tabular}{lcccc}
+                \toprule
+                Iteration & A        & B        & C        & D       \\
+                \midrule
+                0         & $0.25$   & $0.25$   & $0.25$   & $0.25$  \\
+                1         & $0.125$  & $0.25$   & $0.125$  & $0.5$   \\
+                2         & $0.0625$ & $0.3125$ & $0.25$   & $0.375$ \\
+                3         & $0.125$  & $0.3125$ & $0.1875$ & $0.375$ \\
+                \bottomrule
+            \end{tabular}
+            \caption{First 3 iterations of PageRank for the given network.}
+        \end{subfigure}
+    \end{center}
+    \caption{Worked PageRank example.}
+\end{figure}
+
+\subsection{Scaled PageRank}
+
+\begin{itemize}
+    \item Problem with basic PageRank: a closed cycle can trap all rank; pages outside the cycle receive none
+    \item Fix: model a random surfer who follows a link with probability \(d\), or jumps to a random page with probability \(1-d\)
+    \item \(d\): damping factor, often \(0.85\); \(N\): number of pages
+    \item Update each page's rank with link-following score plus a share of the jump probability:
+          \[
+              \PageRank_{t+1}(i)
+              = d \sum_{j \in \InboundLinks(i)}
+              \frac{\PageRank_t(j)}{\magnitude{\OutboundLinks(j)}}
+              + \frac{1-d}{N}
+          \]
+    \item Random jumps let rank escape cycles and reach every page; rankings remain well-defined
 \end{itemize}

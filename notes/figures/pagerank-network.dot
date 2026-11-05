@@ -1,0 +1,8 @@
+digraph PageRankNetwork {
+    a -> d;
+    b -> d;
+    c -> a;
+    c -> b;
+    d -> c;
+    d -> b;
+}
