@@ -14,6 +14,11 @@
     \item Authority score: sum of scores of hubs pointing to the authority
     \item Hub score: sum of scores of authorities pointed to by the hub
     \item HITS: iteratively update authority and hub scores
+    \item Instabilities: an unused edge between $X$ and $Y$ when the sum of $X$'s and $Y$'s scores is less than the edge value
+    \item Stable: contains no instabilities
+    \item Nash bargaining solution: if $A$ and $B$ make a deal with best outside options $X$ and $Y$, respectively, then $A$ receives $X + \frac{S}{2}$ and $B$ receives $Y + \frac{S}{2}$, where $S = V - (X + Y)$ is the surplus from the deal; cannot achieve if $S < 0$
+    \item Balanced: all deals are balanced
+    \item A balanced outcome is also stable
 \end{itemize}
 
 \subsection{Example Using Adjacency Matrix}
