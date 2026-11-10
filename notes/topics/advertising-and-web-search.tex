@@ -1,0 +1,38 @@
+\chapter{Advertising and Web Search}
+
+\begin{itemize}
+    \item Search ads are unique in that they serve targeted ads with specific interests at the \emph{right time}
+    \item Determine prices for ads with \emph{auctions}
+    \item Value of an ad slot: click-through rate, revenue per click, etc.
+    \item We could make market clearing prices if we know advertisers' valuations, but we generally don't
+    \item 1st-price auction causes underreporting of value, and 2nd-price auction is only tested on single-item auctions
+    \item Incorporate idea of ``harm'': does a bidder cause harm to other bidders by winning a certain slot?
+    \item Need to compare the total valuation of other bidders to the total valuation if the bidder were to leave the auction
+    \item Difference in total valuations is the value gain if the bidder were to leave the auction
+    \item The winner of the least-valuable slot does not make any effect
+    \item Differences in total valuations are the Vickrey-Clarke-Groves (VCG) prices
+\end{itemize}
+
+\section{VCG Auctions}
+
+\subsection{Process}
+\begin{enumerate}
+    \item Buyers submit bids for each item
+    \item Choose socially-optimal matching (e.g.\ with market-clearing prices)
+    \item Charge each buyer the VCG price for their winning item
+\end{enumerate}
+
+\subsection{Properties}
+\begin{itemize}
+    \item Bidding your true value is the dominant strategy
+    \item Maximizes total valuation of the perfect matching from slots to advertisers
+\end{itemize}
+
+\section{Real-World Pricing}
+
+\begin{itemize}
+    \item Generalized second-price auction
+    \item Buyers submit bids
+    \item Sell each slot $i$ to the $i$th highest bidder, at the $i + 1$st highest bid
+    \item But, bidding true value is \emph{not} dominant strategy
+\end{itemize}

@@ -151,3 +151,33 @@
           \]
     \item Random jumps let rank escape cycles and reach every page; rankings remain well-defined
 \end{itemize}
+
+\subsection{Other Centrality Measures}
+
+\begin{itemize}
+    \item \(n\): number of nodes; \(\operatorname{dist}(u,v)\): shortest-path distance from \(u\) to \(v\)
+    \item \textbf{Degree centrality}: number of edges incident to a node; high score means many direct connections
+          \[
+              C_D(v)=\frac{\deg(v)}{n-1}
+          \]
+          for an undirected network; division by \(n-1\) gives the normalized score
+    \item \textbf{In-degree centrality}: number of edges entering \(v\); \(\deg^-(v)\), often a measure of incoming attention or popularity
+    \item \textbf{Out-degree centrality}: number of edges leaving \(v\); \(\deg^+(v)\), often a measure of outgoing activity
+          \[
+              C_{\mathrm{in}}(v)=\frac{\deg^-(v)}{n-1},
+              \qquad
+              C_{\mathrm{out}}(v)=\frac{\deg^+(v)}{n-1}
+          \]
+          for a directed network
+    \item \textbf{Closeness centrality}: inverse of the average shortest-path distance from \(v\) to other nodes; high score means quick reach to others
+          \[
+              C_C(v)=\frac{n-1}{\sum_{u\ne v}\operatorname{dist}(v,u)}
+          \]
+          for a connected network; disconnected networks require a reachable-node variant, with conventions varying
+    \item \textbf{Betweenness centrality}: share of shortest paths between node pairs that pass through \(v\); high score means strong brokerage or control of paths
+          \[
+              C_B(v)=\sum_{\substack{s\ne v,\ t\ne v\\s\ne t}}
+              \frac{\sigma_{st}(v)}{\sigma_{st}}
+          \]
+          where \(\sigma_{st}\): number of shortest paths from \(s\) to \(t\), and \(\sigma_{st}(v)\): number passing through \(v\); normalized forms depend on directed/undirected and ordered/unordered pair conventions
+\end{itemize}
