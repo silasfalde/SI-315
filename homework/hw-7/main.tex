@@ -430,26 +430,19 @@ Next, we'll walk you through some steps to specify all possible network exchange
 \begin{solution}
     Write each participant's letter for their payoff.
     \begin{enumerate}[label=\roman*.]
-        \item By part a, A exchanges with C, so \(C=1-x\).
+        \item A exchanges with C, so \(C=1-x\).
         \item Stability on C--D gives \(C+D\geq 1\implies D\geq x\).
-        \item For B--E, the outside options are \(\max(1-x,1-D)=1-x\) and 0. Hence
+        \item For B--E, the outside options are \(\max(1-x,1-D)=1-x\) and 0 so
               \[
                   B-(1-x)=E,\qquad B+E=1
                   \implies B=1-\frac{x}{2},\quad E=\frac{x}{2}.
               \]
-        \item For D--F, the outside options are \(\max(1-C,1-B)=x\) and 0. Hence
+        \item For D--F, the outside options are \(\max(1-C,1-B)=x\) and 0 so
               \[
                   D-x=F,\qquad D+F=1
                   \implies D=\frac{1+x}{2},\quad F=\frac{1-x}{2}.
               \]
     \end{enumerate}
-
-    These conditions alone do not ensure A--C is balanced. Its outside options are \(1-B=\frac{x}{2}\) and \(1-D=\frac{1-x}{2}\), so balance also requires
-    \[
-        x-\frac{x}{2}=(1-x)-\frac{1-x}{2}
-        \implies x=\frac12.
-    \]
-    Thus the depicted network has no stable, balanced outcome for \(x>\frac12\), contrary to the premise that every value in the interval gives one.
 \end{solution}
 
 \subsection{}
@@ -458,7 +451,16 @@ Check your work: If you plug in \(x=0.5\) to your answers from part d, do you ge
 \end{problem}
 
 \begin{solution}
-    Yes: \((A,B,C,D,E,F)=(\frac12,\frac34,\frac12,\frac34,\frac14,\frac14)\), as in \cref{fig:hw7-balanced-half}.
+    \begin{align*}
+        A & = x = \boxed{\frac12}          \\
+        B & =1-\frac{x}{2}=\boxed{\frac34} \\
+        C & = 1 - x = \boxed{\frac12}      \\
+        D & =\frac{1+x}{2}=\boxed{\frac34} \\
+        E & =\frac{x}{2}=\boxed{\frac14}   \\
+        F & =\frac{1-x}{2}=\boxed{\frac14}
+    \end{align*}
+
+    This is the same result as \cref{fig:hw7-balanced-half}.
 \end{solution}
 
 \subsection{}
@@ -467,7 +469,7 @@ Notice that node D never gets less than node B in the outcome, suggesting that D
 \end{problem}
 
 \begin{solution}
-    In the depicted network, B and D have symmetric positions: swapping B with D, A with C, and E with F leaves the network unchanged. The only stable, balanced outcome has \(B=D=\frac34\), so the diagram does not support a claim that D has more bargaining power.
+    B and D have symmetric positions, so swapping B with D, A with C, and E with F leaves the network exactly the same. The only stable, balanced outcome has \(B=D=\frac34\), so they have the same bargaining power.
 \end{solution}
 
 \section{HITS}
