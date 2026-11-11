@@ -193,7 +193,6 @@ An equivalent way of explaining the conditions in part d: (i) the outcome is bal
 
 \begin{problem}
 (20 Points) Consider a network exchange experiment with five participants, A, B, C, D, and E, connected as shown in \cref{fig:hw7-path}. Each edge represents a possible exchange relationship. In each round, a participant can exchange with at most one neighbor. Each exchange generates a total of \$10, which the two participants divide between themselves.
-\end{problem}
 
 \begin{figure}[H]
     \centering
@@ -208,21 +207,66 @@ An equivalent way of explaining the conditions in part d: (i) the outcome is bal
     \caption{Five-participant network.}
     \label{fig:hw7-path}
 \end{figure}
+\end{problem}
 
 \subsection{}
 \begin{problem}
 Which participant or participants would you expect to receive the largest share of the money in this network? Briefly explain your reasoning. You do not need to calculate exact payoffs.
 \end{problem}
 
+\begin{solution}
+    I would expect nodes B and D to receive the most money in this network because they have the most connections, and they would be able to exploit nodes A and E. I would not include C in the highest earning nodes because it cannot exploit any leaf node.
+\end{solution}
+
 \subsection{}
 \begin{problem}
 Suppose that A exchanges with B and C exchanges with D, while E does not exchange. A receives \(a\), B receives \(10-a\), C receives \(x\), and D receives \(10-x\). Determine the best outside option for each of A, B, C, and D in terms of \(a\) and \(x\).
 \end{problem}
 
+\begin{solution}
+    \begin{figure}[H]
+        \centering
+        \begin{tikzpicture}[
+                person/.style={circle, draw=blue!60!black, fill=blue!10, line width=1pt, minimum size=1cm, font=\large\bfseries},
+                exchange/.style={line width=1.5pt},
+                other/.style={line width=0.5pt}
+            ]
+            \foreach \name/\x in {A/0, B/1.6, C/3.2, D/4.8, E/6.4} {
+                    \node[person] (\name) at (\x, 0) {\name};
+                }
+            \draw[exchange] (A) -- (B);
+            \draw[other] (B) -- (C);
+            \draw[exchange] (C) -- (D);
+            \draw[other] (D) -- (E);
+            \node at (0, -0.8) {$a$};
+            \node at (1.6, -0.8) {$10-a$};
+            \node at (3.2, -0.8) {$x$};
+            \node at (4.8, -0.8) {$10-x$};
+            \node at (6.4, -0.8) {$0$};
+        \end{tikzpicture}
+    \end{figure}
+
+    Best outside options per node:
+    \begin{itemize}
+        \item[A:] 0, no outside option
+        \item[B:] $x$ from C
+        \item[C:] $10 - a$ from B
+        \item[D:] 0 from E
+    \end{itemize}
+\end{solution}
+
 \subsection{}
 \begin{problem}
 Using the outside options from part b, determine the Nash bargaining solution for the exchange between A and B. Express the resulting payoffs for A and B in terms of \(x\).
 \end{problem}
+
+\begin{solution}
+
+\end{solution}
+
+\subsection{}
+\begin{problem}
+Now suppose a sixth participant, F, joins the network and is connected only to C, as shown in \cref{fig:hw7-path-with-f}. Compared with the original network in part a, how would you expect the relative bargaining power of C and its neighbors to change? Explain your reasoning in terms of exchange opportunities and competition. You do not need to calculate exact payoffs.
 
 \begin{figure}[H]
     \centering
@@ -239,10 +283,6 @@ Using the outside options from part b, determine the Nash bargaining solution fo
     \caption{Five-participant network with F connected to C.}
     \label{fig:hw7-path-with-f}
 \end{figure}
-
-\subsection{}
-\begin{problem}
-Now suppose a sixth participant, F, joins the network and is connected only to C, as shown in \cref{fig:hw7-path-with-f}. Compared with the original network in part a, how would you expect the relative bargaining power of C and its neighbors to change? Explain your reasoning in terms of exchange opportunities and competition. You do not need to calculate exact payoffs.
 \end{problem}
 
 \section{Stable and Balanced Outcomes}
