@@ -249,9 +249,9 @@ Suppose that A exchanges with B and C exchanges with D, while E does not exchang
     Best outside options per node:
     \begin{itemize}
         \item[A:] 0, no outside option
-        \item[B:] $x$ from C
-        \item[C:] $10 - a$ from B
-        \item[D:] 0 from E
+        \item[B:] $10-x$ from C, since C must receive at least $x$
+        \item[C:] $a$ from B, since B must receive at least $10-a$
+        \item[D:] 10 from E, since E has no other exchange
     \end{itemize}
 \end{solution}
 
@@ -261,7 +261,13 @@ Using the outside options from part b, determine the Nash bargaining solution fo
 \end{problem}
 
 \begin{solution}
+    A's and B's gains are $a$ and $(10-a)-(10-x)=x-a$. The Nash product is maximized when these gains are equal:
+    \begin{equation}
+        a=x-a
+        \implies a=\frac{x}{2}
+    \end{equation}
 
+    Therefore, A receives $\boxed{\frac{x}{2}}$ and B receives $10-a=\boxed{10-\frac{x}{2}}$.
 \end{solution}
 
 \subsection{}
@@ -284,6 +290,10 @@ Now suppose a sixth participant, F, joins the network and is connected only to C
     \label{fig:hw7-path-with-f}
 \end{figure}
 \end{problem}
+
+\begin{solution}
+    I would expect C to become the new single most powerful node because not only does it have the most connections, but it can also exploit a leaf node (F). Previously, C was not the strongest because it couldn't exploit a leaf node while B and D could. Now, there are three nodes competing for its exchange while B and D only have two nodes each.
+\end{solution}
 
 \section{Stable and Balanced Outcomes}
 
