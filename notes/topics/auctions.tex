@@ -38,8 +38,11 @@
 \begin{itemize}
     \item Power in social networks: the ability of a node to influence or control the flow of information or resources within the network; often related to the node's position and connectivity within the network
     \item Exchange experiment: experimental setup used to study how individuals trade or exchange resources within a network, often used to analyze the effects of network structure on bargaining power and market outcomes
-    \item Stability in network exchange: a condition where no subset of nodes can rearrange their exchanges to make themselves strictly better off, ensuring that the network exchange structure remains stable over time
+    \item Stability in network exchange: no connected pair outside the current exchange can form a deal that makes both better off
+    \item Stability test: for every unused edge \((i,j)\) with value \(v_{ij}\), current payoffs \(x_i+x_j \geq v_{ij}\); unstable if \(x_i+x_j < v_{ij}\)
+    \item Balanced outcome: each matched pair splits the surplus above their outside options equally, as in the Nash bargaining solution
           \begin{itemize}
-              \item Unstable where connected nodes not exchanging have a total gain less than the maximum possible gain
+              \item If outside options are \(a_i\) and \(a_j\), then \(x_i-a_i=x_j-a_j=\frac{v_{ij}-a_i-a_j}{2}\)
+              \item Balance implies stability: no unused edge offers both endpoints a better deal
           \end{itemize}
 \end{itemize}

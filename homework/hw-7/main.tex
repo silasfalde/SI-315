@@ -29,7 +29,6 @@
 
 \begin{problem}
 (18 Points) Consider a network exchange experiment on the following network, where the thick lines represent edges along which an exchange occurs.
-\end{problem}
 
 \begin{figure}[H]
     \centering
@@ -54,30 +53,141 @@
     \caption{Network exchange with exchanging edges shown in bold.}
     \label{fig:hw7-four-node}
 \end{figure}
+\end{problem}
 
 \subsection{}
 \begin{problem}
 If \(x=y=0.3\) in \cref{fig:hw7-four-node}, is the outcome stable? Is it balanced? Explain.
 \end{problem}
 
+\begin{solution}
+    \begin{figure}[H]
+        \centering
+        \begin{tikzpicture}[
+                node/.style={circle, draw, fill=gray!10, minimum size=0.8cm},
+                exchange/.style={line width=1.5pt},
+                other/.style={line width=0.5pt}
+            ]
+            \node[node] (one) at (0, 1.5) {1};
+            \node[node] (three) at (2, 1.5) {3};
+            \node[node] (two) at (0, 0) {2};
+            \node[node] (four) at (2, 0) {4};
+            \draw[exchange] (one) -- (three);
+            \draw[other] (one) -- (two);
+            \draw[other] (three) -- (four);
+            \draw[exchange] (two) -- (four);
+            \node at (-0.45, 1.9) {$0.3$};
+            \node at (2.45, 1.9) {$0.7$};
+            \node at (-0.55, -0.35) {$0.7$};
+            \node at (2.45, -0.35) {$0.3$};
+        \end{tikzpicture}
+    \end{figure}
+    \begin{itemize}
+        \item[$\checkmark$] Stable: all unused edges add to 1
+        \item[$\checkmark$] Balanced: nodes are trading at values equal to their best outside option
+    \end{itemize}
+\end{solution}
+
 \subsection{}
 \begin{problem}
 If \(x=0.3\) and \(y=0.4\), is the outcome stable? Is it balanced? Explain.
 \end{problem}
+\begin{solution}
+    \begin{figure}[H]
+        \centering
+        \begin{tikzpicture}[
+                node/.style={circle, draw, fill=gray!10, minimum size=0.8cm},
+                exchange/.style={line width=1.5pt},
+                other/.style={line width=0.5pt}
+            ]
+            \node[node] (one) at (0, 1.5) {1};
+            \node[node] (three) at (2, 1.5) {3};
+            \node[node] (two) at (0, 0) {2};
+            \node[node] (four) at (2, 0) {4};
+            \draw[exchange] (one) -- (three);
+            \draw[other] (one) -- (two);
+            \draw[other] (three) -- (four);
+            \draw[exchange] (two) -- (four);
+            \node at (-0.45, 1.9) {$0.3$};
+            \node at (2.45, 1.9) {$0.7$};
+            \node at (-0.55, -0.35) {$0.6$};
+            \node at (2.45, -0.35) {$0.4$};
+        \end{tikzpicture}
+    \end{figure}
+    \begin{itemize}
+        \item[$\times$] Unstable: Edge $(1,2)$ adds to 0.9, they would exchange to improve payoffs
+        \item[$\times$] Unbalanced: unstable
+    \end{itemize}
+\end{solution}
 
 \subsection{}
 \begin{problem}
 Give an outcome of the network exchange in \cref{fig:hw7-four-node} that simultaneously satisfies the following two conditions: (i) the outcome is balanced; and (ii) adding one new non-exchanging edge to the network would make the outcome unbalanced. Explain why the outcome satisfies both conditions.
+
+\textit{Note: For parts c and d, you need to consider what would happen if you add a new non-exchanging edge between two of the nodes that are already in the network—without adding any new nodes.}
 \end{problem}
+
+\begin{solution}
+    Add the edge between nodes 1 and 4:
+    \begin{figure}[H]
+        \centering
+        \begin{tikzpicture}[
+                node/.style={circle, draw, fill=gray!10, minimum size=0.8cm},
+                exchange/.style={line width=1.5pt},
+                other/.style={line width=0.5pt}
+            ]
+            \node[node] (one) at (0, 1.5) {1};
+            \node[node] (three) at (2, 1.5) {3};
+            \node[node] (two) at (0, 0) {2};
+            \node[node] (four) at (2, 0) {4};
+            \draw[exchange] (one) -- (three);
+            \draw[other] (one) -- (two);
+            \draw[other] (three) -- (four);
+            \draw[exchange] (two) -- (four);
+            \draw[dashed] (one) -- (four);
+            \node at (-0.45, 1.9) {0.3};
+            \node at (2.45, 1.9) {0.7};
+            \node at (-0.55, -0.35) {0.7};
+            \node at (2.45, -0.35) {0.3};
+        \end{tikzpicture}
+    \end{figure}
+    Nodes 1 and 4 each receive \(0.3\), so their payoffs on the new edge sum to \(0.6<1\), so it's unstable and unbalanced.
+\end{solution}
 
 \subsection{}
 \begin{problem}
 Give an outcome of the network exchange in \cref{fig:hw7-four-node} that simultaneously satisfies the following two conditions: (i) the outcome is balanced; and (ii) there's no way to add a new non-exchanging edge to make it unbalanced. Explain why the outcome satisfies both conditions.
 
 An equivalent way of explaining the conditions in part d: (i) the outcome is balanced; and (ii) no matter what new non-exchanging edge you add to the network, the network remains balanced.
-
-\textit{Note: For parts c and d, you need to consider what would happen if you add a new non-exchanging edge between two of the nodes that are already in the network—without adding any new nodes.}
 \end{problem}
+
+\begin{solution}
+    Use \(x=y=0.5\):
+
+    \begin{figure}[H]
+        \centering
+        \begin{tikzpicture}[
+                node/.style={circle, draw, fill=gray!10, minimum size=0.8cm},
+                exchange/.style={line width=1.5pt},
+                other/.style={line width=0.5pt}
+            ]
+            \node[node] (one) at (0, 1.5) {1};
+            \node[node] (three) at (2, 1.5) {3};
+            \node[node] (two) at (0, 0) {2};
+            \node[node] (four) at (2, 0) {4};
+            \draw[exchange] (one) -- (three);
+            \draw[other] (one) -- (two);
+            \draw[other] (three) -- (four);
+            \draw[exchange] (two) -- (four);
+            \node at (-0.45, 1.9) {0.5};
+            \node at (2.45, 1.9) {0.5};
+            \node at (-0.55, -0.35) {0.5};
+            \node at (2.45, -0.35) {0.5};
+        \end{tikzpicture}
+    \end{figure}
+
+    All nodes receive \(0.5\), and each unused edge gives both nodes an outside option of \(0.5\), so the outcome is balanced. On the diagonals, the payoffs sum to \(0.5+0.5=1\), so neither edge is unstable. The diagonals also give their nodes outside options of \(0.5\), keeping the existing exchanges balanced. Therefore, adding any new unused edge between existing nodes keeps the outcome balanced.
+\end{solution}
 
 \section{A Five-Participant Network}
 
