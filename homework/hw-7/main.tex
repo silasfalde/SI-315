@@ -22,7 +22,7 @@
 \end{problem}
 
 \begin{solution}
-    Seeking contradiction: assume the (unused) edge between \(X\) and \(Y\), worth 1, is \underline{unstable}. This means their total payoffs are less than 1: \(X+Y<1\). Let \(\epsilon=(1-X-Y)/2\) split the remaining available value between $X$ and $Y$. $\epsilon$ is greater than 0 because $X + Y < 1$. They could exchange along this edge and receive \(X+\epsilon\) and \(Y+\epsilon\), respectively, since these payoffs sum to no more than than 1. Both would strictly gain, so this edge offers each a better outside option than their current payoff. That contradicts balance, which requires each participant in an exchange to receive at least their best outside option. So, no edge is unstable if the balanced outcome is stable.
+    Seeking contradiction: assume the (unused) edge between \(X\) and \(Y\) is \underline{unstable}. This means their total payoffs are less than 1: \(X+Y<1\). Let \(\epsilon=(1-X-Y)/2\) split the remaining available value between $X$ and $Y$. $\epsilon$ is greater than 0 because $X + Y < 1$. They could exchange along this edge and receive \(X+\epsilon\) and \(Y+\epsilon\), respectively, since these payoffs sum to no more than than 1. Both would strictly gain, so this edge offers each a better outside option than their current payoff. That contradicts balance, which requires each participant in an exchange to receive at least their best outside option. So, no edge is unstable if the balanced outcome is stable.
 \end{solution}
 
 \section{Network Exchange on a Four-Node Network}
@@ -84,7 +84,7 @@
     \end{figure}
     \begin{itemize}
         \item[$\checkmark$] Stable: all unused edges add to 1
-        \item[$\checkmark$] Balanced: nodes are trading at values equal to their best outside option
+        \item[$\checkmark$] Balanced: nodes are trading equal to their best outside option
     \end{itemize}
 \end{solution}
 
@@ -186,7 +186,7 @@
         \end{tikzpicture}
     \end{figure}
 
-    All nodes receive \(0.5\), and each unused edge gives both nodes an outside option of \(0.5\), so the outcome is balanced. On the diagonals, the payoffs sum to \(0.5+0.5=1\), so neither edge is unstable. The diagonals also give their nodes outside options of \(0.5\), keeping the existing exchanges balanced. Therefore, adding any new unused edge between existing nodes keeps the outcome balanced.
+    All nodes receive \(0.5\), and each unused edge gives both nodes an outside option of \(0.5\), so the outcome is balanced. On the diagonals, the payoffs sum to \(0.5+0.5=1\), so neither edge is unstable. The diagonals also give their nodes outside options of \(0.5\), keeping the existing exchanges balanced. Adding any new unused edge between existing nodes keeps the outcome balanced.
 \end{solution}
 
 \section{A Five-Participant Network}
@@ -261,13 +261,13 @@
 \end{problem}
 
 \begin{solution}
-    A's and B's gains are $a$ and $(10-a)-(10-x)=x-a$. The Nash product is maximized when these gains are equal:
+    A's and B's gains are $a$ and $(10-a)-(10-x)=x-a$. Set them equal to maximize the product:
     \begin{equation}
         a=x-a
         \implies a=\frac{x}{2}
     \end{equation}
 
-    Therefore, A receives $\boxed{\frac{x}{2}}$ and B receives $10-a=\boxed{10-\frac{x}{2}}$.
+    A receives $\boxed{\frac{x}{2}}$ and B receives $10-a=\boxed{10-\frac{x}{2}}$.
 \end{solution}
 
 \subsection{}
@@ -332,7 +332,7 @@
     \textit{Hint: First, explain why, if B doesn't exchange with E, at least one edge will have an instability. Then, use the one-exchange rule to explain which other nodes have to exchange with each other if B-E is an exchanging edge.}
 \end{problem}
 \begin{solution}
-    If B does not exchange with E, then E receives 0, so stability on B--E requires B to receive 1. Since A receives \(x>0\), B cannot exchange with A; B must exchange with D, leaving D and F with 0 and making D--F unstable. Therefore B exchanges with E. A must exchange with C to receive \(x>0\), and stability then requires D to exchange with F.
+    B must exchange with E because, if it doesn't, E will always be able to offer B a better deal and make the network unstable. Since B is taken, A can only exchange with C, and D can only exchange with F for the same reason.
 \end{solution}
 
 \subsection{}
@@ -407,11 +407,7 @@
         \label{fig:hw7-balanced-half}
     \end{figure}
 
-    B's outside option is \(\max(1-A,1-D)=\max(\frac12,\frac14)=\frac12\), and E's is 0. The Nash bargaining solution maximizes
-    \[
-        (B-\tfrac12)E \quad\text{where } B+E=1.
-    \]
-    Substituting \(E=1-B\) and maximize \((B-\frac12)(1-B)\), which is largest at \(B=\frac34\), so \(E=\frac14\). The same solution is for D and F.
+    B's outside option is \(\max(1-A,1-D)=\max(\frac12,\frac14)=\frac12\), and E's is 0. The Nash bargaining solution maximizes $(B-\tfrac12)E$ where $B+E=1$. Substitute \(E=1-B\) and maximize \((B-\frac12)(1-B)\), which is largest at \(B=\frac34\), so \(E=\frac14\). The same solution is for D and F.
 
     The unused-edge sums are \(\frac54,\frac32,\frac54\), so the outcome is stable. The outside options for \(A,B,C,D,E,F\) are \((\frac14,\frac12,\frac14,\frac12,0,0)\). Each participant gains \(\frac14\) over their outside option, so the outcome is balanced.
 \end{solution}
@@ -469,7 +465,7 @@
 \end{problem}
 
 \begin{solution}
-    B and D have symmetric positions, so swapping B with D, A with C, and E with F leaves the network exactly the same. The only stable, balanced outcome has \(B=D=\frac34\), so they have the same bargaining power.
+    B's best alternative is \(1-x\), while D's is \(x\), so \(B=1-\frac{x}{2}\) and \(D=\frac{1+x}{2}\). D gets more when \(x>\frac12\) because it has a better alternative. When \(x=\frac12\), they get the same amount.
 \end{solution}
 
 \section{HITS}
