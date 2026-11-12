@@ -1,0 +1,43 @@
+digraph HITSNetwork {
+    graph [rankdir = LR; nodesep = 0.2; ranksep = 1.5; ordering = out; fontsize = 12;];
+    node [shape = circle; width = 0.35; fixedsize = true; fontsize = 12; style = filled; fillcolor = "#dcecf7"; color = "#315d78"; fontcolor = "#18364a";];
+    edge [arrowsize = 0.7; color = "#315d78";];
+    
+    subgraph cluster_hubs {
+        label = "Potential Hubs";
+        labelloc = t;
+        color = none;
+        rank = same;
+        f [label = "F";];
+        e [label = "E";];
+        d [label = "D";];
+        c [label = "C";];
+        b [label = "B";];
+        a [label = "A";];
+    }
+    
+    subgraph cluster_authorities {
+        label = "Potential Authorities";
+        labelloc = t;
+        color = none;
+        rank = same;
+        z [label = "Z";];
+        y [label = "Y";];
+        x [label = "X";];
+        w [label = "W";];
+    }
+    
+    a -> w;
+    a -> x;
+    b -> w;
+    b -> x;
+    b -> y;
+    b -> z;
+    c -> w;
+    c -> x;
+    c -> y;
+    d -> y;
+    d -> z;
+    e -> z;
+    f -> z;
+}

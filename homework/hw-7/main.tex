@@ -16,9 +16,9 @@
 \section{Network Exchange Stability}
 
 \begin{problem}
-(20 Points) Is a balanced outcome in a network exchange experiment (where participants are trying to maximize their payoff) always stable? If it is, prove it. If not, give an example of a balanced outcome that is not stable.
+    (20 Points) Is a balanced outcome in a network exchange experiment (where participants are trying to maximize their payoff) always stable? If it is, prove it. If not, give an example of a balanced outcome that is not stable.
 
-\textit{Note: You're allowed to use the result from this question in the rest of the assignment.}
+    \textit{Note: You're allowed to use the result from this question in the rest of the assignment.}
 \end{problem}
 
 \begin{solution}
@@ -28,36 +28,36 @@
 \section{Network Exchange on a Four-Node Network}
 
 \begin{problem}
-(18 Points) Consider a network exchange experiment on the following network, where the thick lines represent edges along which an exchange occurs.
+    (18 Points) Consider a network exchange experiment on the following network, where the thick lines represent edges along which an exchange occurs.
 
-\begin{figure}[H]
-    \centering
-    \begin{tikzpicture}[
-            node/.style={circle, draw, fill=gray!10, minimum size=0.8cm},
-            exchange/.style={line width=1.5pt},
-            other/.style={line width=0.5pt}
-        ]
-        \node[node] (one) at (0, 1.5) {1};
-        \node[node] (three) at (2, 1.5) {3};
-        \node[node] (two) at (0, 0) {2};
-        \node[node] (four) at (2, 0) {4};
-        \draw[exchange] (one) -- (three);
-        \draw[other] (one) -- (two);
-        \draw[other] (three) -- (four);
-        \draw[exchange] (two) -- (four);
-        \node at (-0.45, 1.9) {$x$};
-        \node at (2.45, 1.9) {$1-x$};
-        \node at (-0.55, -0.35) {$1-y$};
-        \node at (2.45, -0.35) {$y$};
-    \end{tikzpicture}
-    \caption{Network exchange with exchanging edges shown in bold.}
-    \label{fig:hw7-four-node}
-\end{figure}
+    \begin{figure}[H]
+        \centering
+        \begin{tikzpicture}[
+                node/.style={circle, draw, fill=gray!10, minimum size=0.8cm},
+                exchange/.style={line width=1.5pt},
+                other/.style={line width=0.5pt}
+            ]
+            \node[node] (one) at (0, 1.5) {1};
+            \node[node] (three) at (2, 1.5) {3};
+            \node[node] (two) at (0, 0) {2};
+            \node[node] (four) at (2, 0) {4};
+            \draw[exchange] (one) -- (three);
+            \draw[other] (one) -- (two);
+            \draw[other] (three) -- (four);
+            \draw[exchange] (two) -- (four);
+            \node at (-0.45, 1.9) {$x$};
+            \node at (2.45, 1.9) {$1-x$};
+            \node at (-0.55, -0.35) {$1-y$};
+            \node at (2.45, -0.35) {$y$};
+        \end{tikzpicture}
+        \caption{Network exchange with exchanging edges shown in bold.}
+        \label{fig:hw7-four-node}
+    \end{figure}
 \end{problem}
 
 \subsection{}
 \begin{problem}
-If \(x=y=0.3\) in \cref{fig:hw7-four-node}, is the outcome stable? Is it balanced? Explain.
+    If \(x=y=0.3\) in \cref{fig:hw7-four-node}, is the outcome stable? Is it balanced? Explain.
 \end{problem}
 
 \begin{solution}
@@ -90,7 +90,7 @@ If \(x=y=0.3\) in \cref{fig:hw7-four-node}, is the outcome stable? Is it balance
 
 \subsection{}
 \begin{problem}
-If \(x=0.3\) and \(y=0.4\), is the outcome stable? Is it balanced? Explain.
+    If \(x=0.3\) and \(y=0.4\), is the outcome stable? Is it balanced? Explain.
 \end{problem}
 \begin{solution}
     \begin{figure}[H]
@@ -122,9 +122,9 @@ If \(x=0.3\) and \(y=0.4\), is the outcome stable? Is it balanced? Explain.
 
 \subsection{}
 \begin{problem}
-Give an outcome of the network exchange in \cref{fig:hw7-four-node} that simultaneously satisfies the following two conditions: (i) the outcome is balanced; and (ii) adding one new non-exchanging edge to the network would make the outcome unbalanced. Explain why the outcome satisfies both conditions.
+    Give an outcome of the network exchange in \cref{fig:hw7-four-node} that simultaneously satisfies the following two conditions: (i) the outcome is balanced; and (ii) adding one new non-exchanging edge to the network would make the outcome unbalanced. Explain why the outcome satisfies both conditions.
 
-\textit{Note: For parts c and d, you need to consider what would happen if you add a new non-exchanging edge between two of the nodes that are already in the network—without adding any new nodes.}
+    \textit{Note: For parts c and d, you need to consider what would happen if you add a new non-exchanging edge between two of the nodes that are already in the network—without adding any new nodes.}
 \end{problem}
 
 \begin{solution}
@@ -156,9 +156,9 @@ Give an outcome of the network exchange in \cref{fig:hw7-four-node} that simulta
 
 \subsection{}
 \begin{problem}
-Give an outcome of the network exchange in \cref{fig:hw7-four-node} that simultaneously satisfies the following two conditions: (i) the outcome is balanced; and (ii) there's no way to add a new non-exchanging edge to make it unbalanced. Explain why the outcome satisfies both conditions.
+    Give an outcome of the network exchange in \cref{fig:hw7-four-node} that simultaneously satisfies the following two conditions: (i) the outcome is balanced; and (ii) there's no way to add a new non-exchanging edge to make it unbalanced. Explain why the outcome satisfies both conditions.
 
-An equivalent way of explaining the conditions in part d: (i) the outcome is balanced; and (ii) no matter what new non-exchanging edge you add to the network, the network remains balanced.
+    An equivalent way of explaining the conditions in part d: (i) the outcome is balanced; and (ii) no matter what new non-exchanging edge you add to the network, the network remains balanced.
 \end{problem}
 
 \begin{solution}
@@ -192,26 +192,26 @@ An equivalent way of explaining the conditions in part d: (i) the outcome is bal
 \section{A Five-Participant Network}
 
 \begin{problem}
-(20 Points) Consider a network exchange experiment with five participants, A, B, C, D, and E, connected as shown in \cref{fig:hw7-path}. Each edge represents a possible exchange relationship. In each round, a participant can exchange with at most one neighbor. Each exchange generates a total of \$10, which the two participants divide between themselves.
+    (20 Points) Consider a network exchange experiment with five participants, A, B, C, D, and E, connected as shown in \cref{fig:hw7-path}. Each edge represents a possible exchange relationship. In each round, a participant can exchange with at most one neighbor. Each exchange generates a total of \$10, which the two participants divide between themselves.
 
-\begin{figure}[H]
-    \centering
-    \begin{tikzpicture}[
-            person/.style={circle, draw=blue!60!black, fill=blue!10, line width=1pt, minimum size=1cm, font=\large\bfseries}
-        ]
-        \foreach \name/\x in {A/0, B/1.6, C/3.2, D/4.8, E/6.4} {
-                \node[person] (\name) at (\x, 0) {\name};
-            }
-        \draw[line width=1pt] (A) -- (B) -- (C) -- (D) -- (E);
-    \end{tikzpicture}
-    \caption{Five-participant network.}
-    \label{fig:hw7-path}
-\end{figure}
+    \begin{figure}[H]
+        \centering
+        \begin{tikzpicture}[
+                person/.style={circle, draw=blue!60!black, fill=blue!10, line width=1pt, minimum size=1cm, font=\large\bfseries}
+            ]
+            \foreach \name/\x in {A/0, B/1.6, C/3.2, D/4.8, E/6.4} {
+                    \node[person] (\name) at (\x, 0) {\name};
+                }
+            \draw[line width=1pt] (A) -- (B) -- (C) -- (D) -- (E);
+        \end{tikzpicture}
+        \caption{Five-participant network.}
+        \label{fig:hw7-path}
+    \end{figure}
 \end{problem}
 
 \subsection{}
 \begin{problem}
-Which participant or participants would you expect to receive the largest share of the money in this network? Briefly explain your reasoning. You do not need to calculate exact payoffs.
+    Which participant or participants would you expect to receive the largest share of the money in this network? Briefly explain your reasoning. You do not need to calculate exact payoffs.
 \end{problem}
 
 \begin{solution}
@@ -220,7 +220,7 @@ Which participant or participants would you expect to receive the largest share 
 
 \subsection{}
 \begin{problem}
-Suppose that A exchanges with B and C exchanges with D, while E does not exchange. A receives \(a\), B receives \(10-a\), C receives \(x\), and D receives \(10-x\). Determine the best outside option for each of A, B, C, and D in terms of \(a\) and \(x\).
+    Suppose that A exchanges with B and C exchanges with D, while E does not exchange. A receives \(a\), B receives \(10-a\), C receives \(x\), and D receives \(10-x\). Determine the best outside option for each of A, B, C, and D in terms of \(a\) and \(x\).
 \end{problem}
 
 \begin{solution}
@@ -257,7 +257,7 @@ Suppose that A exchanges with B and C exchanges with D, while E does not exchang
 
 \subsection{}
 \begin{problem}
-Using the outside options from part b, determine the Nash bargaining solution for the exchange between A and B. Express the resulting payoffs for A and B in terms of \(x\).
+    Using the outside options from part b, determine the Nash bargaining solution for the exchange between A and B. Express the resulting payoffs for A and B in terms of \(x\).
 \end{problem}
 
 \begin{solution}
@@ -272,23 +272,23 @@ Using the outside options from part b, determine the Nash bargaining solution fo
 
 \subsection{}
 \begin{problem}
-Now suppose a sixth participant, F, joins the network and is connected only to C, as shown in \cref{fig:hw7-path-with-f}. Compared with the original network in part a, how would you expect the relative bargaining power of C and its neighbors to change? Explain your reasoning in terms of exchange opportunities and competition. You do not need to calculate exact payoffs.
+    Now suppose a sixth participant, F, joins the network and is connected only to C, as shown in \cref{fig:hw7-path-with-f}. Compared with the original network in part a, how would you expect the relative bargaining power of C and its neighbors to change? Explain your reasoning in terms of exchange opportunities and competition. You do not need to calculate exact payoffs.
 
-\begin{figure}[H]
-    \centering
-    \begin{tikzpicture}[
-            person/.style={circle, draw=blue!60!black, fill=blue!10, line width=1pt, minimum size=1cm, font=\large\bfseries}
-        ]
-        \foreach \name/\x in {A/0, B/1.6, C/3.2, D/4.8, E/6.4} {
-                \node[person] (\name) at (\x, 0) {\name};
-            }
-        \node[person] (F) at (3.2, 1.7) {F};
-        \draw[line width=1pt] (A) -- (B) -- (C) -- (D) -- (E);
-        \draw[line width=1pt] (F) -- (C);
-    \end{tikzpicture}
-    \caption{Five-participant network with F connected to C.}
-    \label{fig:hw7-path-with-f}
-\end{figure}
+    \begin{figure}[H]
+        \centering
+        \begin{tikzpicture}[
+                person/.style={circle, draw=blue!60!black, fill=blue!10, line width=1pt, minimum size=1cm, font=\large\bfseries}
+            ]
+            \foreach \name/\x in {A/0, B/1.6, C/3.2, D/4.8, E/6.4} {
+                    \node[person] (\name) at (\x, 0) {\name};
+                }
+            \node[person] (F) at (3.2, 1.7) {F};
+            \draw[line width=1pt] (A) -- (B) -- (C) -- (D) -- (E);
+            \draw[line width=1pt] (F) -- (C);
+        \end{tikzpicture}
+        \caption{Five-participant network with F connected to C.}
+        \label{fig:hw7-path-with-f}
+    \end{figure}
 \end{problem}
 
 \begin{solution}
@@ -298,38 +298,38 @@ Now suppose a sixth participant, F, joins the network and is connected only to C
 \section{Stable and Balanced Outcomes}
 
 \begin{problem}
-(25 Points) Consider a network exchange experiment on the network below. In the outcome of this exchange, A gets \$\(x\), where \(x\) can be any number between and including 0.5 and 1.
+    (25 Points) Consider a network exchange experiment on the network below. In the outcome of this exchange, A gets \$\(x\), where \(x\) can be any number between and including 0.5 and 1.
 
-\begin{figure}[H]
-    \centering
-    \begin{tikzpicture}[
-            person/.style={circle, draw=black!70, fill=orange!15, minimum size=0.8cm, font=\large},
-            edge/.style={line width=0.6pt}
-        ]
-        \node[person] (A) at (0, 1.5) {A};
-        \node[person] (B) at (1.8, 1.5) {B};
-        \node[person] (C) at (0, 0) {C};
-        \node[person] (D) at (1.8, 0) {D};
-        \node[person] (E) at (3.2, 2.2) {E};
-        \node[person] (F) at (3.2, -0.7) {F};
-        \draw[edge] (A) -- (B);
-        \draw[edge] (A) -- (C);
-        \draw[edge] (B) -- (D);
-        \draw[edge] (C) -- (D);
-        \draw[edge] (B) -- (E);
-        \draw[edge] (D) -- (F);
-        \node at (-0.55, 1.5) {$x$};
-    \end{tikzpicture}
-    \caption{Network exchange experiment for Problem 4.}
-    \label{fig:hw7-stable-balanced}
-\end{figure}
+    \begin{figure}[H]
+        \centering
+        \begin{tikzpicture}[
+                person/.style={circle, draw=black!70, fill=orange!15, minimum size=0.8cm, font=\large},
+                edge/.style={line width=0.6pt}
+            ]
+            \node[person] (A) at (0, 1.5) {A};
+            \node[person] (B) at (1.8, 1.5) {B};
+            \node[person] (C) at (0, 0) {C};
+            \node[person] (D) at (1.8, 0) {D};
+            \node[person] (E) at (3.2, 2.2) {E};
+            \node[person] (F) at (3.2, -0.7) {F};
+            \draw[edge] (A) -- (B);
+            \draw[edge] (A) -- (C);
+            \draw[edge] (B) -- (D);
+            \draw[edge] (C) -- (D);
+            \draw[edge] (B) -- (E);
+            \draw[edge] (D) -- (F);
+            \node at (-0.55, 1.5) {$x$};
+        \end{tikzpicture}
+        \caption{Network exchange experiment for Problem 4.}
+        \label{fig:hw7-stable-balanced}
+    \end{figure}
 \end{problem}
 
 \subsection{}
 \begin{problem}
-If the outcome is stable, which pairs of nodes must exchange with each other? Explain in 3--5 sentences.
+    If the outcome is stable, which pairs of nodes must exchange with each other? Explain in 3--5 sentences.
 
-\textit{Hint: First, explain why, if B doesn't exchange with E, at least one edge will have an instability. Then, use the one-exchange rule to explain which other nodes have to exchange with each other if B-E is an exchanging edge.}
+    \textit{Hint: First, explain why, if B doesn't exchange with E, at least one edge will have an instability. Then, use the one-exchange rule to explain which other nodes have to exchange with each other if B-E is an exchanging edge.}
 \end{problem}
 \begin{solution}
     If B does not exchange with E, then E receives 0, so stability on B--E requires B to receive 1. Since A receives \(x>0\), B cannot exchange with A; B must exchange with D, leaving D and F with 0 and making D--F unstable. Therefore B exchanges with E. A must exchange with C to receive \(x>0\), and stability then requires D to exchange with F.
@@ -337,7 +337,7 @@ If the outcome is stable, which pairs of nodes must exchange with each other? Ex
 
 \subsection{}
 \begin{problem}
-Draw an example of a network exchange outcome that is stable but not balanced. Your example should specify which pairs of nodes negotiate an exchange and how much money each node receives. Show that your outcome is stable but not balanced.
+    Draw an example of a network exchange outcome that is stable but not balanced. Your example should specify which pairs of nodes negotiate an exchange and how much money each node receives. Show that your outcome is stable but not balanced.
 \end{problem}
 
 \begin{figure}[H]
@@ -377,9 +377,9 @@ Draw an example of a network exchange outcome that is stable but not balanced. Y
 
 \subsection{}
 \begin{problem}
-Draw an example of a network exchange outcome that is stable and balanced when \(x=0.5\). Your example should specify which pairs of nodes negotiated an exchange and how much money each node received. Show that your outcome is balanced.
+    Draw an example of a network exchange outcome that is stable and balanced when \(x=0.5\). Your example should specify which pairs of nodes negotiated an exchange and how much money each node received. Show that your outcome is balanced.
 
-\textit{Hint: First figure out how much A and the node A is exchanging with get. Then solve the Nash bargaining equation for the edge B-E with the outside options you know. Finally solve the Nash bargaining equation for the third exchanging edge.}
+    \textit{Hint: First figure out how much A and the node A is exchanging with get. Then solve the Nash bargaining equation for the edge B-E with the outside options you know. Finally solve the Nash bargaining equation for the third exchanging edge.}
 \end{problem}
 
 \begin{solution}
@@ -418,13 +418,13 @@ Draw an example of a network exchange outcome that is stable and balanced when \
 
 \subsection{}
 \begin{problem}
-Next, we'll walk you through some steps to specify all possible network exchange outcomes that are stable and balanced. We know that A gets \(x\geq 0.5\) from their exchange. In the next 4 steps, we'll see how we can figure out what the rest of the nodes get in terms of \(x\). This allows us to express all possible outcomes since for any value of \(x\):
-\begin{enumerate}[label=\roman*.]
-    \item Who is A's exchanging partner, and how much do they get in terms of \(x\)?
-    \item Show that, in a stable, balanced outcome, D gets a value of \(x\) or more.
-    \item In a stable, balanced outcome, how much do B and E get in terms of \(x\)? Show your work, including how you calculate each node's outside options and apply the Nash bargaining solution.
-    \item There's one final exchanging pair whose split we haven't yet calculated. In a stable, balanced outcome, how much does each of them get in terms of \(x\)? Show your work, including how you calculate each node's outside options and apply the Nash bargaining solution.
-\end{enumerate}
+    Next, we'll walk you through some steps to specify all possible network exchange outcomes that are stable and balanced. We know that A gets \(x\geq 0.5\) from their exchange. In the next 4 steps, we'll see how we can figure out what the rest of the nodes get in terms of \(x\). This allows us to express all possible outcomes since for any value of \(x\):
+    \begin{enumerate}[label=\roman*.]
+        \item Who is A's exchanging partner, and how much do they get in terms of \(x\)?
+        \item Show that, in a stable, balanced outcome, D gets a value of \(x\) or more.
+        \item In a stable, balanced outcome, how much do B and E get in terms of \(x\)? Show your work, including how you calculate each node's outside options and apply the Nash bargaining solution.
+        \item There's one final exchanging pair whose split we haven't yet calculated. In a stable, balanced outcome, how much does each of them get in terms of \(x\)? Show your work, including how you calculate each node's outside options and apply the Nash bargaining solution.
+    \end{enumerate}
 \end{problem}
 
 \begin{solution}
@@ -447,7 +447,7 @@ Next, we'll walk you through some steps to specify all possible network exchange
 
 \subsection{}
 \begin{problem}
-Check your work: If you plug in \(x=0.5\) to your answers from part d, do you get your answers from part c?
+    Check your work: If you plug in \(x=0.5\) to your answers from part d, do you get your answers from part c?
 \end{problem}
 
 \begin{solution}
@@ -465,7 +465,7 @@ Check your work: If you plug in \(x=0.5\) to your answers from part d, do you ge
 
 \subsection{}
 \begin{problem}
-Notice that node D never gets less than node B in the outcome, suggesting that D has more power than B. What about D's position in the network makes this the case? Offer a 1--3 sentence intuitive explanation.
+    Notice that node D never gets less than node B in the outcome, suggesting that D has more power than B. What about D's position in the network makes this the case? Offer a 1--3 sentence intuitive explanation.
 \end{problem}
 
 \begin{solution}
@@ -475,45 +475,84 @@ Notice that node D never gets less than node B in the outcome, suggesting that D
 \section{HITS}
 
 \begin{problem}
-(17 Points) Consider the webpage network below. Pages A--F are potential hubs and pages W--Z are potential authorities. Start with every hub score and every authority score equal to 1.
+    Consider the webpage network below. Pages A--F are potential hubs and pages W--Z are potential authorities. Start with every hub score and every authority score equal to 1.
+    \begin{figure}[H]
+        \centering
+        \includegraphics[height=0.5\textwidth]{figures/hits-network.pdf}
+        \caption{Webpage network for the HITS updates.}
+        \label{fig:hw7-hits}
+    \end{figure}
 \end{problem}
 
-\begin{figure}[H]
+
+\subsection{}
+\begin{problem}
+    Run two full HITS updates on the network in \cref{fig:hw7-hits}. Fill in the table with the authority scores for W--Z and the hub scores for A--F after each update. Then report the normalized scores.
+
+\end{problem}
+
+\begin{table}[h]
+    \caption{Two HITS updates on the original network.}
     \centering
-    \includegraphics[height=5cm]{figures/hits-network.pdf}
-    \caption{Webpage network for the HITS updates.}
-    \label{fig:hw7-hits}
-\end{figure}
+    \begin{tabular}{ccccccccccc}
+        \toprule
+        Scores     & W      & X      & Y      & Z      & A      & B      & C      & D      & E      & F      \\
+        \midrule
+        Update \#1 & 3      & 3      & 3      & 4      & 6      & 13     & 9      & 7      & 4      & 4      \\
+        Update \#2 & 28     & 28     & 29     & 28     & 56     & 113    & 85     & 57     & 28     & 28     \\
+        \midrule
+        Normalized & 0.4955 & 0.4955 & 0.5132 & 0.4955 & 0.3350 & 0.6759 & 0.5085 & 0.3410 & 0.1675 & 0.1675 \\
+        \bottomrule
+    \end{tabular}
+\end{table}
 
 \subsection{}
 \begin{problem}
-Run two full HITS updates on the network in \cref{fig:hw7-hits}. Fill in the table with the authority scores for W--Z and the hub scores for A--F after each update. Then report the normalized scores.
-
-\begin{center}
-    \resizebox{\textwidth}{!}{%
-        \begin{tabular}{|c|c|c|c|c|c|c|c|c|c|c|}
-            \hline
-            Scores     & W & X & Y & Z & A & B & C & D & E & F \\
-            \hline
-            Update \#1 &   &   &   &   &   &   &   &   &   &   \\
-            \hline
-            Update \#2 &   &   &   &   &   &   &   &   &   &   \\
-            \hline
-            Normalized &   &   &   &   &   &   &   &   &   &   \\
-            \hline
-        \end{tabular}%
-    }
-\end{center}
+    Which page has the highest normalized authority score, and which page has the highest normalized hub score after two updates? Briefly explain why each page scores highly using the HITS intuition.
 \end{problem}
+
+\begin{solution}
+    Page \textbf{Y} has the highest authority score ($29 = 0.5132$) and \textbf{B} has the highest hub score ($113 = 0.6759$). For Y, it's not just because Y has many hubs pointing to it because it has 3 like most other authorities. What gives Y the higher score is the \textbf{quality of the hubs that point to it}, which have high quality because they point to many authorities. Similarly for B, it \textbf{points at 4 authorities}, which is more than all other hubs. Also, the authorities that it points at are all good quality (mostly the same).
+\end{solution}
 
 \subsection{}
 \begin{problem}
-Which page has the highest normalized authority score, and which page has the highest normalized hub score after two updates? Briefly explain why each page scores highly using the HITS intuition.
+    Page A is allowed to add exactly one new outgoing link while keeping its existing links to W and X. It can add either \(A\to Y\) or \(A\to Z\). Starting again with all hub and authority scores equal to 1, which option gives A the larger normalized hub score after two full HITS updates? Show enough calculation to justify your answer.
 \end{problem}
 
-\subsection{}
-\begin{problem}
-Page A is allowed to add exactly one new outgoing link while keeping its existing links to W and X. It can add either \(A\to Y\) or \(A\to Z\). Starting again with all hub and authority scores equal to 1, which option gives A the larger normalized hub score after two full HITS updates? Show enough calculation to justify your answer.
-\end{problem}
+\begin{solution}
+
+    \begin{table}[h]
+        \caption{\(A\to Y\)}
+        \centering
+        \begin{tabular}{ccccccccccc}
+            \toprule
+            Scores     & W & X & Y & Z & A      & B   & C   & D  & E  & F  \\
+            \midrule
+            Update \#1 & 3 & 3 & 4 & 4 & 10     & 14  & 10  & 8  & 4  & 4  \\
+            Update \#2 &   &   &   &   & 110    & 140 & 110 & 72 & 30 & 30 \\
+            \midrule
+            Normalized &   &   &   &   & 0.4881 &     &     &    &    &    \\
+            \bottomrule
+        \end{tabular}
+    \end{table}
+
+    \begin{table}[h]
+        \caption{\(A\to Z\)}
+        \centering
+        \begin{tabular}{ccccccccccc}
+            \toprule
+            Scores     & W & X & Y & Z & A      & B   & C  & D  & E  & F  \\
+            \midrule
+            Update \#1 & 3 & 3 & 3 & 5 & 11     & 14  & 9  & 8  & 5  & 5  \\
+            Update \#2 &   &   &   &   & 111    & 142 & 99 & 74 & 43 & 43 \\
+            \midrule
+            Normalized &   &   &   &   & 0.4893 &     &    &    &    &    \\
+            \bottomrule
+        \end{tabular}
+    \end{table}
+
+    Adding \(A\to Z\) gives A the slightly larger normalized hub score of 0.4893 rather than 0.4881 from $A \to Y$.
+\end{solution}
 
 \end{document}
