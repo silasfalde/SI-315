@@ -1,0 +1,236 @@
+\documentclass[newpages]{assignment}
+
+\usepackage{booktabs}
+\usepackage{float}
+\usepackage{tikz}
+
+\class{SI 315}
+\title{Assignment 8}
+\author{Silas Falde}
+\date{Due at 11:59 pm on Wednesday, November 18}
+\setcounter{tocdepth}{1}
+
+\begin{document}
+\maketitle
+
+\tableofcontents
+
+\section{Basic PageRank}
+
+\begin{problem}
+Give an example of a directed connected network with \(n \geq 4\) nodes where not all nodes have the same in-degree (i.e., the network contains two nodes A and B that have different in-degrees) and assigning \(1/n\) to each node is an equilibrium set of Basic PageRank values. Apply the definition of equilibrium to show that assigning \(1/n\) to each node is an equilibrium set of Basic PageRank values.
+\end{problem}
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[height=3.5cm]{figures/basic-pagerank-example.pdf}
+    \label{fig:hw8-basic-pagerank-example}
+    \caption{Example network satisfying the two properties}
+\end{figure}
+The in-degrees for Figure \ref{fig:hw8-basic-pagerank-example} are \(2,1,2,2,1\) for $A, B, C, D, E$, so they are not all equal.
+
+PageRank updates for each node using $1/5$ as the initial assignment:
+\[
+    \begin{aligned}
+        A & : \frac{1/5}{2}+\frac{1/5}{2}=\frac15, &
+        B & : \frac{1/5}{1}=\frac15,                 \\
+        C & : \frac{1/5}{2}+\frac{1/5}{2}=\frac15, &
+        D & : \frac{1/5}{2}+\frac{1/5}{2}=\frac15, &
+        E & : \frac{1/5}{1}=\frac15.
+    \end{aligned}
+\]
+Since one update leaves every value unchanged, assigning \(1/n=1/5\) to each node is an equilibrium.
+
+
+
+\section{Scaled PageRank}
+
+\begin{problem}
+In class, we discussed what Scaled PageRank is but not how to find it. This question will help you get comfortable doing that. We'll try to calculate a few rounds of the Scaled PageRank values of the following network, with damping parameter \(d=0.8\).
+\end{problem}
+
+\begin{figure}[H]
+    \centering
+    \begin{tikzpicture}[
+            node/.style={circle, draw, fill=gray!10, minimum size=0.8cm},
+            edge/.style={->, line width=0.6pt}
+        ]
+        \node[node] (one) at (1, 2) {1};
+        \node[node] (two) at (0, 0.8) {2};
+        \node[node] (three) at (-0.8, -0.5) {3};
+        \node[node] (four) at (1, -0.5) {4};
+        \draw[edge] (one) -- (two);
+        \draw[edge] (one) -- (four);
+        \draw[edge] (two) -- (three);
+        \draw[edge] (two) -- (four);
+        \draw[edge] (four) -- (three);
+    \end{tikzpicture}
+    \caption{Network for the Scaled PageRank updates.}
+    \label{fig:hw8-pagerank}
+\end{figure}
+
+\subsection{}
+\begin{problem}
+Let's start by getting some intuition about Scaled PageRank. As we discussed in lecture, we can also describe Scaled PageRank values in terms of something called a scaled random walk with damping parameter:
+
+\emph{The walker starts by choosing a page at random, picking each page with equal probability. In each step, the walker does one of two things: With probability \(d\), the walker picks a random outgoing link from their current page, and follows it to where it leads; and with probability \(1-d\) it jumps to a node chosen uniformly at random.}
+
+\begin{enumerate}[label=\roman*.]
+    \item Do you expect the Basic PageRank value of node 1 to be larger than zero for large values of \(k\)? Explain your intuition without doing any calculations.
+    \item Do you expect the Scaled PageRank value of node 1 to be larger than zero for large values of \(k\) and \(d<1\)? Explain your intuition without doing any calculations.
+\end{enumerate}
+\end{problem}
+
+\subsection{}
+\begin{problem}
+Now we'll calculate Scaled PageRank. Initially, all four nodes have the same Scaled PageRank value of \(1/4\). These are the Scaled PageRank values in round 0. Starting from these values, let's perform the first round of Scaled PageRank updates. We'll talk you through doing this in three steps. Show your work and values for each node after each step.
+
+\begin{enumerate}[label=\roman*.]
+    \item Apply the Basic PageRank Update Rule. This step models where the random walker would go if they choose to follow the edges.
+    \item Scale down all PageRank values by a factor of \(d\). That is, multiply each node's value from (i) by \(d=0.8\). This step models the fact that, in Scaled PageRank, the random walker only follows the edges with probability \(d\) (and chooses to jump randomly the rest of the time).
+    \item Divide the residual \(1-d\) units of PageRank equally over all nodes, giving \((1-d)/n\) to each. That is, add \((1-d)/n=0.2/4=0.05\) to each node's value from (ii). This step models the fact that every node has an equal chance of being visited by the random walker when it chooses to jump randomly.
+\end{enumerate}
+\end{problem}
+
+\subsection{}
+\begin{problem}
+Now perform a second round of Scaled PageRank updates, using the steps from part c. Show your work and values for each node after each step.
+\end{problem}
+
+\subsection{}
+\begin{problem}
+Find an equilibrium set of Basic PageRank values for this graph. Explain why these values are an equilibrium set.
+
+\textit{Hint:} You should be able to find the values using intuition (which you don't need to explain) and then explain why that set of values is an equilibrium set.
+\end{problem}
+
+\subsection{}
+\begin{problem}
+Find an equilibrium set of Scaled PageRank values with damping parameter \(d=0.8\) for this graph. Explain why these values are an equilibrium set.
+
+\textit{Hint:} One way to find this equilibrium set of values is to go through the following four steps:
+\begin{enumerate}[label=(\roman*)]
+    \item Let \(x_1\) be the equilibrium value of node 1. Write out the equation that \(x_1\) must satisfy. What must \(x_1\) be equal to?
+    \item Let \(x_2\) be the equilibrium value of node 2. Write out the equation that \(x_2\) must satisfy. Given your answer to (i), what must \(x_2\) be equal to?
+    \item Let \(x_4\) be the equilibrium value of node 4. Write out the equation that \(x_4\) must satisfy. Given your answer to (i) and (ii), what must \(x_4\) be equal to?
+    \item What is the equilibrium value of node 3? Explain.
+\end{enumerate}
+\end{problem}
+
+\section{VCG Advertising Auction}
+
+\begin{problem}
+A search engine has three advertising slots available for sale. Three advertisers, A, B, and C, are interested in these slots. The click-through rates and the advertisers' true values per click are shown below.
+
+\begin{center}
+    \begin{tabular}{cccc}
+        \toprule
+        Slot & Click-through rate & Advertiser & Value per click \\
+        \midrule
+        X    & 10                 & A          & \$10            \\
+        Y    & 5                  & B          & \$8             \\
+        Z    & 0                  & C          & \$4             \\
+        \bottomrule
+    \end{tabular}
+\end{center}
+
+The search engine uses the VCG procedure to assign advertising slots and determine prices. Show your work for each calculation.
+\end{problem}
+
+\subsection{}
+\begin{problem}
+Assuming all advertisers bid their true values, calculate the valuations of each advertiser for all three slots. Find the socially optimal assignment.
+\end{problem}
+
+\subsection{}
+\begin{problem}
+Calculate the VCG price and payoff for each advertiser under this assignment. Show how you calculate the harm done to the other advertisers.
+\end{problem}
+
+\subsection{}
+\begin{problem}
+Suppose Advertisers A and B agree that A will continue bidding \$10 per click, while B will lower their bid from \$8 to \$5 per click. Advertiser C continues bidding \$4 per click. Using these bids, find the new assignment and VCG prices. Then calculate A's and B's payoffs using their true values per click.
+\end{problem}
+
+\subsection{}
+\begin{problem}
+Compare the combined payoffs of A and B in parts (b) and (c). Does either advertiser benefit from the change in bids? Does this contradict the result that truthful bidding is a dominant strategy in the VCG procedure? Explain briefly.
+\end{problem}
+
+\section{VCG Auction Prices}
+
+\begin{problem}
+Consider the following VCG auction and prices. In this problem, we'll walk you through a few steps to find the values of \(x\), \(y\), and \(z\).
+\end{problem}
+
+\begin{figure}[H]
+    \centering
+    \begin{tikzpicture}[
+            buyer/.style={circle, draw, fill=gray!10, minimum size=0.8cm},
+            edge/.style={line width=1pt}
+        ]
+        \node[align=center] at (-2, 0.8) {Click-through\\rate};
+        \node at (0, 0.8) {Slots};
+        \node at (2, 0.8) {Advertisers};
+        \node[align=center] at (4, 0.8) {Revenue\\per click};
+        \node[align=center] at (6, 0.8) {VCG\\prices};
+        \node[buyer] (D) at (0, 0) {D};
+        \node[buyer] (E) at (0, -1) {E};
+        \node[buyer] (F) at (0, -2) {F};
+        \node[buyer] (A) at (2, 0) {A};
+        \node[buyer] (B) at (2, -1) {B};
+        \node[buyer] (C) at (2, -2) {C};
+        \draw[edge] (D) -- (A);
+        \draw[edge] (E) -- (B);
+        \draw[edge] (F) -- (C);
+        \node at (-2, 0) {60};
+        \node at (-2, -1) {25};
+        \node at (-2, -2) {15};
+        \node at (4, 0) {\(x\)};
+        \node at (4, -1) {\(x-2\)};
+        \node at (4, -2) {\(x-6\)};
+        \node at (6, 0) {275};
+        \node at (6, -1) {\(y\)};
+        \node at (6, -2) {\(z\)};
+    \end{tikzpicture}
+    \caption{VCG auction values and prices.}
+    \label{fig:hw8-vcg}
+\end{figure}
+
+\subsection{}
+\begin{problem}
+List the valuations for each buyer in terms of \(x\).
+\end{problem}
+
+\subsection{}
+\begin{problem}
+Calculate the VCG price of D in terms of \(x\), then find the value of \(x\) such that the VCG price of D is 275. Show your work.
+\end{problem}
+
+\subsection{}
+\begin{problem}
+Plug in the value of \(x\) from part (b) into the market. What values do \(y\) and \(z\) have to be, at this value of \(x\)? Show your work.
+\end{problem}
+
+\section{VCG and GSP Auctions}
+
+\begin{problem}
+Suppose a search engine has three ad slots to sell. Slot A has a clickthrough rate of 10, slot B has a clickthrough rate of 8, and slot C has a clickthrough rate of 3. There are four advertisers who are interested in these slots. Advertiser W values clicks at \$11 per click, Advertiser X values clicks at \$7 per click, advertiser Y values clicks at \$3 per click, and advertiser Z values clicks at \$1 per click.
+\end{problem}
+
+\subsection{}
+\begin{problem}
+Assuming each advertiser bids their true value, compute the socially optimal allocation of slots to advertisers and the VCG price for each slot. Show all your work.
+\end{problem}
+
+\subsection{}
+\begin{problem}
+Assuming each advertiser bids their true value, compute the socially optimal allocation of slots to advertisers and the GSP price for each slot. Show all your work.
+\end{problem}
+
+\subsection{}
+\begin{problem}
+Suppose advertiser W lowers their bid to \$6, while the other advertisers continue bidding their true values. Under GSP, what slot will W receive? Calculate W's payoff before and after lowering their bid. Would W benefit from this change? What does this imply about truthful bidding under GSP compared with VCG?
+\end{problem}
+
+\end{document}

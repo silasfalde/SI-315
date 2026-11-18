@@ -1,0 +1,14 @@
+digraph basic_pagerank_example {
+    graph [rankdir=LR, nodesep=0.6, ranksep=0.9, pad=0.15, splines=true];
+    node [shape=circle, style=filled, fillcolor="gray95", color="black", width=0.5, fixedsize=true, fontsize=12];
+    edge [arrowsize=0.7];
+
+    A -> B;
+    B -> C;
+    B -> D;
+    C -> A;
+    C -> D;
+    D -> E;
+    E -> A;
+    E -> C;
+}
