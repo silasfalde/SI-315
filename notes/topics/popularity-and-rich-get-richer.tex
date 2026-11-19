@@ -1,0 +1,41 @@
+\chapter{Popularity and the Rich-Get-Richer Model}
+
+\section{Degree Distributions}
+
+\begin{itemize}
+    \item \textbf{Degree}: number of neighbors of a node in an undirected graph
+    \item \textbf{In-degree}: number of incoming links to a node in a directed graph
+    \item Degree distribution: fraction of nodes with each degree
+    \item Web popularity: measurable by page traffic or number of in-links
+\end{itemize}
+
+\section{Web Popularity}
+
+\begin{itemize}
+    \item Independent random linking would produce a roughly normal in-degree distribution
+    \item Real links are not independent: similar pages link to each other, and popular pages attract more links
+    \item Web in-degree follows a heavy-tailed \textbf{power law}: fraction of pages with in-degree \(k\) is proportional to \(1/k^2\)
+    \item Most pages have few in-links; a small number have very many
+\end{itemize}
+
+\section{Rich-Get-Richer Model}
+
+\begin{itemize}
+    \item Pages arrive one at a time; each links to one existing page
+    \item With probability \(p\), link to a uniformly random existing page
+    \item With probability \(1-p\), choose a random existing page and copy its link
+    \item Copying favors high in-degree pages: more existing links point to them, making them more likely to be copied
+    \item This copying mechanism is \textbf{preferential attachment}
+    \item For a large network, the fraction of pages with in-degree \(k\) is proportional to \(1/k^c\), where
+          \begin{equation}
+              c = 1 + \frac{1}{1-p}
+          \end{equation}
+    \item Lower \(p\) means more copying, a smaller \(c\), and greater popularity imbalance
+    \item Similar dynamics appear in wealth, city populations, scientific citations, and popular items
+    \item The Long Tail: many items with low popularity collectively make up a significant portion of total activity, despite each being individually unpopular
+    \item Popularity can be predicted based on network arrival time, but prediction otherwise is very difficult
+    \item Music market experiment: social influence (showing users the download counts of songs) leads to dramatic popularity variance
+    \item Gini Coefficient: measure of inequality in a distribution, with 0 indicating perfect equality and 1 indicating maximal inequality
+    \item Showing download counts increases the Gini coefficient
+    \item Social influence plays a significant role in the formation of market outcomes
+\end{itemize}

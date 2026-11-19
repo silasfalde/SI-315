@@ -9,3 +9,13 @@
               \prob(A \given B) = \frac{\prob(A) \prob(B \given A)}{\prob(B)}
           \end{equation}
 \end{itemize}
+
+\section{A General Cascade Model}
+
+\begin{itemize}
+    \item People decide sequentially whether to accept or reject; accepting is good with probability \(p\)
+    \item Each person receives an informative private signal, but sees only earlier decisions
+    \item If acceptances \(A\) and rejections \(B\) differ by at least two, follow the majority regardless of the private signal
+    \item In the cupcake experiment, two matching early guesses can start a cascade; a wrong cascade occurs with probability \(1/9\)
+    \item A cascade can be wrong even when everyone acts rationally; a few people with better information or different actions can break it
+\end{itemize}
