@@ -1,0 +1,152 @@
+\documentclass[newpages]{assignment}
+
+\usepackage{booktabs}
+\usepackage{float}
+\input{../../custom-commands.tex}
+
+\class{SI 315}
+\title{Assignment 9}
+\author{Silas Falde}
+\date{Due at 11:59 pm on Wednesday, November 25}
+\setcounter{tocdepth}{1}
+
+\begin{document}
+\maketitle
+
+\tableofcontents
+
+\emph{Reading: Sections 16.1--16.7 of the textbook.}
+
+\section{Turnout by Priority Issue}
+
+\begin{problem}
+    You work for a data analytics firm that has been contracted to do some analysis for the Republican Party in Michigan. They want you to help them calculate how many votes they are likely to get. To calculate this, you gathered data from three sources:
+    \begin{enumerate}[label=\roman*.]
+        \item From news reports, you know that 30\% of registered Republicans turned out to vote in the last election.
+        \item You found a report published by a reputable polling firm who did some exit polling at the end of the last election to ask what issue most affected their vote. Among registered Republicans who voted in that election, 50\% said it was the economy, 30\% said it was abortion, and 20\% said it was immigration.
+        \item This year, you polled registered Republicans on the party registry (i.e., all of the people who could possibly vote this year, but you don't know if they will vote or not) about the issues that are most important to them. 70\% say it's the economy, 10\% say it's abortion, and 20\% say it's immigration.
+    \end{enumerate}
+
+    Since this year's election hasn't happened yet, you decide to make the simplifying assumption that the numbers from (i) and (ii) will also apply to this year's election.
+
+    Given this information, we can compute various probabilities. For example:
+    \begin{itemize}
+        \item The probability that a registered Republican, whether they vote or not, cares most about the economy ($P(\text{Economy})$) is 0.7 since that's the best information we have based on this year's poll.
+        \item The probability that a voter this year cares most about the economy ($P(\text{Economy}\mid\text{Vote})$) is 0.5 since that's the fraction of Republican voters from last year who most cared about the economy.
+        \item The probability that a registered Republican will vote ($P(\text{Vote})$) this year is 0.3 since that is the best information we have from last year.
+    \end{itemize}
+\end{problem}
+
+\subsection{}
+\begin{problem}
+    Among the Republican base whose main priority is the economy, what fraction do you project will turn out to vote in this year's election? Show all of your work.
+\end{problem}
+
+\subsection{}
+\begin{problem}
+    Among the Republican base whose main priority is abortion, what fraction do you project will turn out to vote in this year's election? Show all of your work.
+\end{problem}
+
+\subsection{}
+\begin{problem}
+    Among the Republican base whose main priority is immigration, what fraction do you project will turn out to vote in this year's election? Show all of your work.
+\end{problem}
+
+\subsection{}
+\begin{problem}
+    It's two weeks ahead of the election, and the campaign wants to try running issue-specific ads to increase their turnout among the Republican base whose main priority is the economy. These ads would not increase turnout among people whose main priority is not the economy. In total, there are 3,000,000 registered Republicans in Michigan (some of whose top priority is not the economy). The campaign needs to get 100,000 extra votes in MI to be confident in winning; each ad costs \$10,000 and increases voter turnout by a factor of $x>1$ among people whose top issue is the economy (i.e., if the voter turnout without ads was 0.1 and they run 1 ad, the voter turnout will become $0.1x$; the voter turnout if they run 2 ads will be $0.1x^2$; the voter turnout if they run 3 ads will be $0.1x^3$; and so on). The campaign has a budget of \$1,000,000. What are all values of $x$ where they can turn out enough voters to be confident in winning the election? Express your answer as an inequality in $x$. Show all of your work.
+
+    \emph{Hint: Once you set up an inequality, you can solve for $x$ on wolframalpha.com.}
+\end{problem}
+
+\section{Information Cascades}
+
+\begin{problem}
+    Consider the information cascades model from Chapter 16. Suppose the probability that Accept is a good idea is $p=1/2$, and the probability of receiving a High signal when Good is true (as well as the probability of receiving a Low signal when Bad is true) is $q=3/5$. Assume that Good is actually true.
+
+    Each person observes the choices made by previous people before making their own decision. If a person is indifferent between Accept and Reject, they follow their own private signal.
+\end{problem}
+
+\subsection{}
+\begin{problem}
+    What is the probability that the first person chooses Accept? What is the probability that they choose Reject?
+\end{problem}
+
+\subsection{}
+\begin{problem}
+    Calculate the probability of observing each of the four possible pairs of choices by the first two people: $(A,A)$, $(A,R)$, $(R,A)$, and $(R,R)$. A pair such as $(A,R)$ means that the first person chooses Accept and the second person chooses Reject.
+
+    Show your work.
+\end{problem}
+
+\subsection{}
+\begin{problem}
+    What is the probability that an information cascade begins with the third person's decision? Show your work.
+\end{problem}
+
+\subsection{}
+\begin{problem}
+    Given that an information cascade begins with the third person's decision, what is the probability that the cascade is incorrect? Show your work.
+\end{problem}
+
+\section{Misinformation Intervention Cascade}
+
+\begin{problem}
+    In this question, we'll consider a slightly more realistic version of the cascade model than the one in the book. You are a product manager at a social media company. Your team is getting concerned about the amount of misinformation that is circulating on the platform, and you are tasked with proposing and building an intervention to combat it.
+
+    You recently read a cool article about a misinformation detection tool developed by researchers at your alma mater UMSI, and you think up an intervention that pairs the tool with some cute messaging encouraging people to fact-check the messages it flags. You recruit 20 researchers and ask them if they would recommend this intervention. The researchers provide their recommendations sequentially and they can all see the recommendations of researchers who reported before them. It turns out that all researchers recommended your intervention but they didn't share the results of their research that led them to that recommendation. Since the researchers could see the recommendations of the people who reported them before them, you assume that they were basing their recommendation on their own research as well as the recommendations of the researchers before them. You think there's a 50/50 chance that your intervention will be effective. However, the research instruments are not perfect. If the intervention is effective, there's a 90\% chance each person's research will support it. If the intervention is not effective, there's still a 40\% chance that the research will support it. Since each researcher works in a different lab, the probability that each person’s research supports your intervention are independent of each other.
+\end{problem}
+
+\subsection{}
+\begin{problem}
+    Let Support be the event that a researcher’s research supports your intervention, and Effective be the event that your intervention is effective. Based on the description, what are the following probabilities:
+    \begin{enumerate}[label=\roman*.]
+        \item $P(\text{Effective})$
+        \item $P(\text{Support}\mid\text{Effective})$
+        \item $P(\text{Not Support}\mid\text{Not Effective})$
+    \end{enumerate}
+
+    \emph{Note: You cannot use the general cascade model from class since $P(\text{Support}\mid\text{Effective})$ is not equal to $P(\text{Not Support}\mid\text{Not Effective})$ and the general cascade model assumes that these two probabilities are equal to each other.}
+\end{problem}
+
+\subsection{}
+\begin{problem}
+    Show that the first researcher was following their private information. Show all of your work.
+
+    \emph{Hint: You can take the following approach:
+    \begin{enumerate}[label=\roman*.]
+        \item Using Bayes’ rule, what is the probability that the intervention is effective if the first researcher’s research supports it? In this case, will the first researcher recommend your intervention?
+        \item Using Bayes’ rule, what is the probability that the first researcher will recommend the intervention if their research doesn’t support it?
+        \item Why do your answers to (i) and (ii) suggest that the first researcher was following their private signal?
+    \end{enumerate}}
+\end{problem}
+
+\subsection{}
+\begin{problem}
+    Show that the second person was following their private information. Show all of your work.
+
+    \emph{Hint: You can take the following approach:
+    \begin{enumerate}[label=\roman*.]
+        \item If the first researcher recommended the intervention, can the second researcher infer whether their research supported your intervention?
+        \item Using Bayes’ rule, what is the probability that the second researcher will recommend the intervention if their research supports your hypothesis and the first researcher already recommended it?
+        \item Using Bayes’ rule, what is the probability that the second researcher will recommend the intervention if their research doesn’t support your hypothesis and the first researcher already recommended it?
+        \item Why do your answers to (ii) and (iii) suggest that the second researcher was following their private signal?
+    \end{enumerate}}
+\end{problem}
+
+\subsection{}
+\begin{problem}
+    Show that the third person was following their private information. Show all of your work.
+\end{problem}
+
+\subsection{}
+\begin{problem}
+    After how many people did a cascade start? Show all of your work.
+\end{problem}
+
+\subsection{}
+\begin{problem}
+    Imagine your boss tells you that your colleague, an OSU alum, used the same procedure as you to assess the effectiveness of a fact-checking intervention developed by an OSU team. However, instead of asking 20 researchers, they asked 200 researchers about the fact-checking intervention, all of whom recommended it. You know that the associated probabilities ($P(\text{Effective})$, $P(\text{Support}\mid\text{Effective})$, and $P(\text{Not Support}\mid\text{Not Effective})$) are the same across the two interventions. Your boss says that you should trust the intervention developed by the OSU team more than the one you tested because 200 researchers, as opposed to 20, recommended it. Do you agree with your boss' assessment? Explain.
+\end{problem}
+
+\end{document}
