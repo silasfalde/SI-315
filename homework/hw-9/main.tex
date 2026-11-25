@@ -59,15 +59,13 @@
     Among the Republican base whose main priority is abortion, what fraction do you project will turn out to vote in this year's election? Show all of your work.
 \end{problem}
 \begin{solution}
-    By Bayes' rule,
     \[
         \prob(\text{Vote}\given\text{Abortion})
         = \frac{\prob(\text{Abortion}\given\text{Vote})\prob(\text{Vote})}
         {\prob(\text{Abortion})}
         = \frac{0.3(0.3)}{0.1}
-        = 0.9.
+        = \boxed{0.9}
     \]
-    I project that $90\%$ of Republicans whose main priority is abortion will vote.
 \end{solution}
 
 \subsection{}
@@ -75,15 +73,13 @@
     Among the Republican base whose main priority is immigration, what fraction do you project will turn out to vote in this year's election? Show all of your work.
 \end{problem}
 \begin{solution}
-    By Bayes' rule,
     \[
         \prob(\text{Vote}\given\text{Immigration})
         = \frac{\prob(\text{Immigration}\given\text{Vote})\prob(\text{Vote})}
         {\prob(\text{Immigration})}
         = \frac{0.2(0.3)}{0.2}
-        = 0.3.
+        = \boxed{0.3}
     \]
-    I project that $30\%$ of Republicans whose main priority is immigration will vote.
 \end{solution}
 
 \subsection{}
@@ -93,15 +89,20 @@
     \emph{Hint: Once you set up an inequality, you can solve for $x$ on wolframalpha.com.}
 \end{problem}
 \begin{solution}
-    There are $3{,}000{,}000(0.7)=2{,}100{,}000$ Republicans whose main priority is the economy. Without ads, their expected turnout is
     \[
-        2{,}100{,}000\left(\frac{3}{14}\right)=450{,}000.
+        \begin{aligned}
+            N_{\text{Economy}} &= 3{,}000{,}000(0.7)=2{,}100{,}000,\\
+            V_0 &= 2{,}100{,}000\left(\frac{3}{14}\right)=450{,}000,\\
+            n_{\max} &= \frac{1{,}000{,}000}{10{,}000}=100.
+        \end{aligned}
     \]
-    If the campaign runs $n$ ads, expected turnout among this group is $450{,}000x^n$, so the extra votes are $450{,}000(x^n-1)$. The budget allows at most $1{,}000{,}000/10{,}000=100$ ads. Since $x>1$, using all 100 ads gives the most turnout, so enough votes are possible exactly when
+    Since $x>1$, the most extra votes come from using all 100 ads:
     \[
-        450{,}000(x^{100}-1)\geq 100{,}000
-        \quad\Longleftrightarrow\quad
-        x\geq\left(\frac{11}{9}\right)^{1/100}.
+        \begin{aligned}
+            450{,}000(x^{100}-1) &\geq 100{,}000\\
+            x^{100} &\geq \frac{11}{9}\\
+            &\boxed{x\geq \left(\frac{11}{9}\right)^{1/100}}
+        \end{aligned}
     \]
 \end{solution}
 
@@ -118,9 +119,9 @@
     What is the probability that the first person chooses Accept? What is the probability that they choose Reject?
 \end{problem}
 \begin{solution}
-    The first person follows their signal. Since Good is true, the probability of a High signal is $q=3/5$ and the probability of a Low signal is $1-q=2/5$. Therefore,
     \[
-        \prob(A)=\frac{3}{5},\qquad \prob(R)=\frac{2}{5}.
+        \boxed{\prob(A)=q=\frac{3}{5}},\qquad
+        \boxed{\prob(R)=1-q=\frac{2}{5}}.
     \]
 \end{solution}
 
@@ -131,14 +132,14 @@
     Show your work.
 \end{problem}
 \begin{solution}
-    The first person follows their signal. After seeing the first choice, the second person also follows their signal: an opposite signal makes them indifferent, and they follow their own signal. The signals are independent, so
+    An opposite signal makes the second person indifferent, so they follow their own signal. The signals are independent:
     \[
-        \prob(A,A)=\frac{3}{5}\frac{3}{5}=\frac{9}{25},\qquad
-        \prob(A,R)=\frac{3}{5}\frac{2}{5}=\frac{6}{25},
+        \prob(A,A)=\frac{3}{5}\frac{3}{5}=\boxed{\frac{9}{25}},\qquad
+        \prob(A,R)=\frac{3}{5}\frac{2}{5}=\boxed{\frac{6}{25}},
     \]
     \[
-        \prob(R,A)=\frac{2}{5}\frac{3}{5}=\frac{6}{25},\qquad
-        \prob(R,R)=\frac{2}{5}\frac{2}{5}=\frac{4}{25}.
+        \prob(R,A)=\frac{2}{5}\frac{3}{5}=\boxed{\frac{6}{25}},\qquad
+        \prob(R,R)=\frac{2}{5}\frac{2}{5}=\boxed{\frac{4}{25}}.
     \]
 \end{solution}
 
@@ -147,12 +148,11 @@
     What is the probability that an information cascade begins with the third person's decision? Show your work.
 \end{problem}
 \begin{solution}
-    A cascade starts with the third person when the first two choices agree. Thus,
     \[
         \prob(\text{cascade at person 3})
         =\prob(A,A)+\prob(R,R)
         =\frac{9}{25}+\frac{4}{25}
-        =\frac{13}{25}.
+        =\boxed{\frac{13}{25}}.
     \]
 \end{solution}
 
@@ -161,12 +161,11 @@
     Given that an information cascade begins with the third person's decision, what is the probability that the cascade is incorrect? Show your work.
 \end{problem}
 \begin{solution}
-    Good is true, so the cascade is incorrect only if the first two choices are both Reject. Therefore,
     \[
         \prob(\text{incorrect}\given\text{cascade at person 3})
         =\frac{\prob(R,R)}{\prob(A,A)+\prob(R,R)}
         =\frac{4/25}{13/25}
-        =\frac{4}{13}.
+        =\boxed{\frac{4}{13}}.
     \]
 \end{solution}
 
@@ -190,11 +189,10 @@
     \emph{Note: You cannot use the general cascade model from class since $P(\text{Support}\mid\text{Effective})$ is not equal to $P(\text{Not Support}\mid\text{Not Effective})$ and the general cascade model assumes that these two probabilities are equal to each other.}
 \end{problem}
 \begin{solution}
-    From the description,
     \[
-        \prob(\text{Effective})=0.5,\qquad
-        \prob(\text{Support}\given\text{Effective})=0.9,\qquad
-        \prob(\text{Not Support}\given\text{Not Effective})=1-0.4=0.6.
+        \boxed{\prob(\text{Effective})=0.5},\qquad
+        \boxed{\prob(\text{Support}\given\text{Effective})=0.9},\qquad
+        \boxed{\prob(\text{Not Support}\given\text{Not Effective})=1-0.4=0.6}.
     \]
 \end{solution}
 
@@ -210,19 +208,16 @@
         \end{enumerate}}
 \end{problem}
 \begin{solution}
-    If the first research result supports the intervention, Bayes' rule gives
     \[
         \prob(\text{Effective}\given\text{Support})
         =\frac{0.9(0.5)}{0.9(0.5)+0.4(0.5)}
-        =\frac{9}{13}>\frac{1}{2}.
+        =\boxed{\frac{9}{13}>\frac{1}{2}}.
     \]
-    The researcher recommends it. If the result does not support the intervention,
     \[
         \prob(\text{Effective}\given\text{Not Support})
         =\frac{0.1(0.5)}{0.1(0.5)+0.6(0.5)}
-        =\frac{1}{7}<\frac{1}{2}.
+        =\boxed{\frac{1}{7}<\frac{1}{2}}.
     \]
-    The researcher does not recommend it. Thus their recommendation matches their private research result in either case: they follow their private information.
 \end{solution}
 
 \subsection{}
@@ -238,19 +233,17 @@
         \end{enumerate}}
 \end{problem}
 \begin{solution}
-    Since the first researcher follows their signal, their recommendation tells the second researcher that the first result supported the intervention. If the second result also supports it, then
+    The first recommendation reveals a supporting signal. Thus,
     \[
         \prob(\text{Effective}\given A_1,\text{Support}_2)
         =\frac{0.5(0.9)(0.9)}{0.5(0.9)(0.9)+0.5(0.4)(0.4)}
-        =\frac{81}{97}>\frac{1}{2},
+        =\boxed{\frac{81}{97}>\frac{1}{2}},
     \]
-    so the second researcher recommends it. If their result does not support it,
     \[
         \prob(\text{Effective}\given A_1,\text{Not Support}_2)
         =\frac{0.5(0.9)(0.1)}{0.5(0.9)(0.1)+0.5(0.4)(0.6)}
-        =\frac{3}{11}<\frac{1}{2},
+        =\boxed{\frac{3}{11}<\frac{1}{2}}.
     \]
-    so they do not recommend it. Therefore the second researcher follows their private information.
 \end{solution}
 
 \subsection{}
@@ -258,19 +251,17 @@
     Show that the third person was following their private information. Show all of your work.
 \end{problem}
 \begin{solution}
-    If the first two researchers recommend the intervention, their private results both supported it. If the third research result supports it, then
+    The first two recommendations reveal two supporting signals. Then,
     \[
         \prob(\text{Effective}\given A_1,A_2,\text{Support}_3)
         =\frac{0.5(0.9)^3}{0.5(0.9)^3+0.5(0.4)^3}
-        =\frac{729}{793}>\frac{1}{2}.
+        =\boxed{\frac{729}{793}>\frac{1}{2}},
     \]
-    If it does not support it,
     \[
         \prob(\text{Effective}\given A_1,A_2,\text{Not Support}_3)
         =\frac{0.5(0.9)^2(0.1)}{0.5(0.9)^2(0.1)+0.5(0.4)^2(0.6)}
-        =\frac{27}{59}<\frac{1}{2}.
+        =\boxed{\frac{27}{59}<\frac{1}{2}}.
     \]
-    The third researcher recommends only when their own result supports the intervention, so they follow their private information.
 \end{solution}
 
 \subsection{}
@@ -278,14 +269,14 @@
     After how many people did a cascade start? Show all of your work.
 \end{problem}
 \begin{solution}
-    After the first three recommendations, the evidence is three supporting research results. For the fourth researcher, even a result that does not support the intervention gives
+    After three supporting results, even a nonsupporting result from researcher 4 gives
     \[
         \prob(\text{Effective}\given A_1,A_2,A_3,\text{Not Support}_4)
         =\frac{0.5(0.9)^3(0.1)}
         {0.5(0.9)^3(0.1)+0.5(0.4)^3(0.6)}
-        =\frac{243}{371}>\frac{1}{2}.
+        =\boxed{\frac{243}{371}>\frac{1}{2}}.
     \]
-    So the fourth researcher recommends it regardless of their result. From then on, recommendations reveal no new private information. A cascade starts with the fourth person.
+    Therefore, the cascade starts with researcher 4.
 \end{solution}
 
 \subsection{}
@@ -293,13 +284,12 @@
     Imagine your boss tells you that your colleague, an OSU alum, used the same procedure as you to assess the effectiveness of a fact-checking intervention developed by an OSU team. However, instead of asking 20 researchers, they asked 200 researchers about the fact-checking intervention, all of whom recommended it. You know that the associated probabilities ($P(\text{Effective})$, $P(\text{Support}\mid\text{Effective})$, and $P(\text{Not Support}\mid\text{Not Effective})$) are the same across the two interventions. Your boss says that you should trust the intervention developed by the OSU team more than the one you tested because 200 researchers, as opposed to 20, recommended it. Do you agree with your boss' assessment? Explain.
 \end{problem}
 \begin{solution}
-    No. The first three researchers follow their private results, but the fourth starts a cascade. Once the first three recommend the intervention, later researchers recommend it regardless of their own results, so their recommendations add no evidence. In either case, 20 or 200 recommendations correspond to three supporting results, giving
+    No. After the first three recommendations, the rest are a cascade and add no evidence:
     \[
         \prob(\text{Effective}\given A_1,A_2,A_3)
         =\frac{0.5(0.9)^3}{0.5(0.9)^3+0.5(0.4)^3}
-        =\frac{729}{793}\approx 0.92.
+        =\boxed{\frac{729}{793}\approx 0.92}.
     \]
-    Thus, under this model, the number of recommendations beyond the first three does not make the OSU intervention more trustworthy.
 \end{solution}
 
 \end{document}
