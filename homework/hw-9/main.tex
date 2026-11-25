@@ -15,8 +15,6 @@
 
 \tableofcontents
 
-\emph{Reading: Sections 16.1--16.7 of the textbook.}
-
 \section{Turnout by Priority Issue}
 
 \begin{problem}
@@ -42,16 +40,14 @@
     Among the Republican base whose main priority is the economy, what fraction do you project will turn out to vote in this year's election? Show all of your work.
 \end{problem}
 \begin{solution}
-    By Bayes' rule,
     \[
         \prob(\text{Vote}\given\text{Economy})
         = \frac{\prob(\text{Economy}\given\text{Vote})\prob(\text{Vote})}
         {\prob(\text{Economy})}
         = \frac{0.5(0.3)}{0.7}
         = \frac{3}{14}
-        \approx 0.214.
+        \approx \boxed{0.214}
     \]
-    I project that about $21.4\%$ of Republicans whose main priority is the economy will vote.
 \end{solution}
 
 \subsection{}
@@ -91,17 +87,18 @@
 \begin{solution}
     \[
         \begin{aligned}
-            N_{\text{Economy}} &= 3{,}000{,}000(0.7)=2{,}100{,}000,\\
-            V_0 &= 2{,}100{,}000\left(\frac{3}{14}\right)=450{,}000,\\
-            n_{\max} &= \frac{1{,}000{,}000}{10{,}000}=100.
+            N_{\text{Economy}} & = 3{,}000{,}000(0.7)=2{,}100{,}000,                 \\
+            V_{\text{base}}    & = 2{,}100{,}000\left(\frac{3}{14}\right)=450{,}000, \\
+            n_{\max}           & = \frac{1{,}000{,}000}{10{,}000}=100.
         \end{aligned}
     \]
     Since $x>1$, the most extra votes come from using all 100 ads:
     \[
         \begin{aligned}
-            450{,}000(x^{100}-1) &\geq 100{,}000\\
-            x^{100} &\geq \frac{11}{9}\\
-            &\boxed{x\geq \left(\frac{11}{9}\right)^{1/100}}
+            450{,}000\left(x^{100}\right) - 450{,}000 & \geq 100{,}000                                                 \\
+            x^{100}                                   & \geq \frac{100{,}000 + 450{,}000}{450{,}000}                   \\
+            x^{100}                                   & \geq \frac{11}{9}                                              \\
+            x                                         & \geq \left(\frac{11}{9}\right)^{1/100} \approx \boxed{1.00201}
         \end{aligned}
     \]
 \end{solution}
